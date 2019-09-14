@@ -16,6 +16,7 @@ class BlogController extends Controller
 
     public function landingPage()
     {
+        $title = 'title';
         
         $posts = Post::with('author', 'tags', 'category', 'comments')
                     ->latestFirst()
@@ -23,7 +24,7 @@ class BlogController extends Controller
                     ->filter(request()->only(['term', 'year', 'month']))
                     ->simplePaginate($this->limitHone);
 
-        return view("blog.landing-page", compact('posts'));
+        return view("blog.landing-page", compact('posts','title'));
     }
 
     public function createValue()
@@ -89,6 +90,7 @@ class BlogController extends Controller
 
     public function tag(Tag $tag)
     {
+        $title = $tag->title;
         $tagName = $tag->title;
 
         $posts = $tag->posts()
@@ -97,11 +99,12 @@ class BlogController extends Controller
                           ->published()
                           ->simplePaginate($this->limit);
 
-         return view("blog.index", compact('posts', 'tagName'));
+         return view("blog.index", compact('posts', 'tagName','title'));
     }
 
     public function author(User $author)
     {
+        $title = $author->name;
         $authorName = $author->name;
 
         $posts = $author->posts()
@@ -110,7 +113,7 @@ class BlogController extends Controller
                           ->published()
                           ->simplePaginate($this->limit);
 
-         return view("blog.index", compact('posts', 'authorName'));
+         return view("blog.index", compact('posts', 'authorName','title'));
     }
 
     public function show(Post $post)

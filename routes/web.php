@@ -8,90 +8,107 @@
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
+
 |
 */
-Route::get('/', [
+// react routes
+
+Route::view('/', 'welcome')
+     ->name('react');
+
+
+// Blog routes for anything aport from soccer
+Route::get('/platform', [
     'uses' => 'BlogController@landingPage',
     'as'   => 'landing-page'
 ]);
-Route::get('/services', [
+Route::get('/platform/services', [
     'uses' => 'BlogController@services',
     'as'   => 'services'
 ]);
-Route::get('/about', [
+
+Route::get('/platform/customers', [
+    'uses' => 'CustomerController@index',
+    'as'   => 'services'
+]);
+Route::get('/platform/about', [
     'uses' => 'BlogController@about',
     'as'   => 'about'
 ]);
-Route::get('/contact-us', [
+Route::get('/platform/contact-us', [
     'uses' => 'BlogController@contactUs',
     'as'   => 'contact-us'
 ]);
-Route::get('/create-value', [
+Route::get('/platform/create-value', [
     'uses' => 'BlogController@createValue',
     'as'   => 'create-value'
 ]);
-Route::get('/how-we-work', [
+Route::get('/platform/how-we-work', [
     'uses' => 'BlogController@howWeWork',
     'as'   => 'how-we-work'
 ]);
-Route::get('/blog', [
+Route::get('/platform/blog', [
     'uses' => 'BlogController@index',
     'as'   => 'blog'
 ]);
 
-Route::get('/blog/{post}', [
+Route::get('/platform/blog/{post}', [
     'uses' => 'BlogController@show',
     'as'   => 'blog.show'
 ]);
 
-Route::post('/blog/{post}/comments', [
+Route::post('/platform/blog/{post}/comments', [
     'uses' => 'CommentsController@store',
     'as'   => 'blog.comments'
 ]);
 
-Route::get('/category/{category}', [
+Route::get('/platform/category/{category}', [
     'uses' => 'BlogController@category',
     'as'   => 'category'
 ]);
 
-Route::get('/author/{author}', [
+Route::get('/platform/author/{author}', [
     'uses' => 'BlogController@author',
     'as'   => 'author'
 ]);
 
-Route::get('/tag/{tag}', [
+Route::get('/platform/tag/{tag}', [
     'uses' => 'BlogController@tag',
     'as'   => 'tag'
 ]);
 
-Route::post('/blog/{post}/comments', [
+Route::post('/platform/blog/{post}/comments', [
     'uses' => 'CommentsController@store',
     'as' => 'blog.comments'
 ]);
 
 Route::auth();
 
-Route::get('/home', 'Backend\HomeController@index');
-Route::get('/edit-account', 'Backend\HomeController@edit');
-Route::put('/edit-account', 'Backend\HomeController@update');
+Route::get('/platform/home', 'Backend\HomeController@index');
+Route::get('/platform/edit-account', 'Backend\HomeController@edit');
+Route::put('/platform/edit-account', 'Backend\HomeController@update');
 
-Route::put('/backend/blog/restore/{blog}', [
+Route::put('/platform/backend/blog/restore/{blog}', [
     'uses' => 'Backend\BlogController@restore',
     'as'   => 'backend.blog.restore'
 ]);
-Route::delete('/backend/blog/force-destroy/{blog}', [
+Route::delete('/platform/backend/blog/force-destroy/{blog}', [
     'uses' => 'Backend\BlogController@forceDestroy',
     'as'   => 'backend.blog.force-destroy'
 ]);
-Route::resource('/backend/blog', 'Backend\BlogController',['as' =>'backend']);
+Route::resource('/platform/backend/blog', 'Backend\BlogController',['as' =>'backend']);
 
-Route::resource('/backend/categories', 'Backend\CategoriesController',['as' =>'backend']);
+Route::resource('/platform/backend/categories', 'Backend\CategoriesController',['as' =>'backend']);
 
-Route::get('/backend/users/confirm/{users}', [
+Route::get('/platform/backend/users/confirm/{users}', [
     'uses' => 'Backend\UsersController@confirm',
     'as' => 'backend.users.confirm'
 ]);
-Route::resource('/backend/users', 'Backend\UsersController',['as' =>'backend']);
+Route::resource('/platform/backend/users', 'Backend\UsersController',['as' =>'backend']);
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/platform/home', 'HomeController@index')->name('home');
+Route::get('/platform/customers/pdf','CustomerController@export_pdf');
+Route::get('customer/pdfexports/{id}','CustomerController@pdfexport');
+
+Route::get('/platform/payments','CustomerController@payments');
