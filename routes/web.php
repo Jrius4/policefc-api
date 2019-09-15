@@ -27,10 +27,6 @@ Route::get('/platform/services', [
     'as'   => 'services'
 ]);
 
-Route::get('/platform/customers', [
-    'uses' => 'CustomerController@index',
-    'as'   => 'services'
-]);
 Route::get('/platform/about', [
     'uses' => 'BlogController@about',
     'as'   => 'about'
@@ -107,8 +103,3 @@ Route::get('/platform/backend/users/confirm/{users}', [
 Route::resource('/platform/backend/users', 'Backend\UsersController',['as' =>'backend']);
 Auth::routes();
 
-//Route::get('/platform/home', 'HomeController@index')->name('home');
-Route::get('/platform/customers/pdf','CustomerController@export_pdf');
-Route::get('customer/pdfexports/{id}','CustomerController@pdfexport');
-
-Route::get('/platform/payments','CustomerController@payments');

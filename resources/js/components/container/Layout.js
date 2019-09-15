@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {HashRouter as Router,Link,Route,Switch} from 'react-router-dom'
 import Landing from '../Landing/Landing';
-import Customer from '../Customer/Customer';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import "../../styles/custom.css";
+import "../../assets/styles/custom.css";
+import PostList from '../Posts/PostList';
 
 class Layout extends Component {
     
@@ -14,10 +14,10 @@ class Layout extends Component {
             <div>
                 <Router>
                     <Navbar/>
-                    <div className="mt-4 py-2">
+                    <div className="mt-4 p-2">
                         
                         <Route exact path="/" component={Landing}/>
-                        <Route exact path="/customers" component={Customer}/>
+                        <Route exact path="/customers" component={PostList}/>
                         <Switch>
                             <Route exact path="/home" component={Landing}/>
                         </Switch>

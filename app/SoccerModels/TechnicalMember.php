@@ -2,9 +2,9 @@
 
 namespace App\SoccerModels;
 
-use Illuminate\Database\Eloquent\Model;
+use App\SoccerModels\SupportMember;
 
-class TechnicalMember extends Model
+class TechnicalMember extends SupportMember
 {
     //
 }
