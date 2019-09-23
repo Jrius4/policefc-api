@@ -27,15 +27,33 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/customers">
+                <Link className="nav-link" to="/posts">
                   {' '}
-                  Customers
+                  Posts
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/home">
+                <Link className="nav-link" to="/list-posts">
                   {' '}
-                  Home
+                  List Posts
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/players">
+                  {' '}
+                  Players
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/executives">
+                  {' '}
+                  Executives
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/technicals">
+                  {' '}
+                  Technicals
                 </Link>
               </li>
             </ul>
@@ -46,7 +64,7 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="/platform" target="_blanck">
+                    <a className="nav-link" href="/platform/blog" target="_blanck">
                         Platform
                     </a>
                 </li>

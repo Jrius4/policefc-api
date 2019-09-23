@@ -172,6 +172,7 @@ return [
         Laratrust\LaratrustServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Spatie\Fractal\FractalServiceProvider::class,
 
 
         /*

@@ -2,14 +2,17 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use App\Transformers\PostTransformer;
+use Illuminate\Database\Eloquent\Model;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
     use SoftDeletes;
+    public $transformer = PostTransformer::class;
+
 
     protected $fillable = ['title', 'slug', 'excerpt', 'body', 'published_at', 'category_id', 'image'];
     protected $dates    = ['published_at'];

@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -26,21 +27,33 @@ class UsersTableSeeder extends Seeder
                     'slug' => 'kazibwe-julius-junior',
                     'email' => "kazibwejuliusjunior@gmail.com",
                     'password' => bcrypt('admins3cret'),
-                    'bio' => $faker->text(rand(250, 300))
+                    'bio' => $faker->paragraph(1),
+                    'remember_token' => Str::random(10),
+                    'verified'=>$verified = $faker->randomElement([User::VERIFIED_USER,User::UNVERIFIED_USER]),
+                    'verification_token'=> $verified == User::VERIFIED_USER ? null : User::generateVerificationCode(),
+                    'admin'=>$faker->randomElement([User::ADMIN_USER]),
                 ],
                 [
                     'name' => "Male Paul",
                     'slug' => 'male-paul',
                     'email' => "mp@test.com",
                     'password' => bcrypt('s3cret'),
-                    'bio' => $faker->text(rand(250, 300))
+                    'bio' => $faker->paragraph(1),
+                    'remember_token' => Str::random(10),
+                    'verified'=>$verified = $faker->randomElement([User::VERIFIED_USER,User::UNVERIFIED_USER]),
+                    'verification_token'=> $verified == User::VERIFIED_USER ? null : User::generateVerificationCode(),
+                    'admin'=>$faker->randomElement([User::ADMIN_USER]),
                 ],
                 [
                     'name' => "Jjuuko Henry",
                     'slug' => 'jjuuku-henry',
                     'email' => "jh@test.com",
                     'password' => bcrypt('s3cret'),
-                    'bio' => $faker->text(rand(250, 300))
+                    'bio' => $faker->paragraph(1),
+                    'remember_token' => Str::random(10),
+                    'verified'=>$verified = $faker->randomElement([User::VERIFIED_USER,User::UNVERIFIED_USER]),
+                    'verification_token'=> $verified == User::VERIFIED_USER ? null : User::generateVerificationCode(),
+                    'admin'=>$faker->randomElement([User::ADMIN_USER]),
                 ],
             ]);
         }

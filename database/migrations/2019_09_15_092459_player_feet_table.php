@@ -16,6 +16,7 @@ class PlayerFeetTable extends Migration
         Schema::create('player_feet', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->timestamps();
         });
     }
 

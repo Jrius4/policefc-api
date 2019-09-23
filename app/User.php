@@ -2,11 +2,12 @@
 
 namespace App;
 
+use App\Transformers\UserTransformer;
 use Illuminate\Notifications\Notifiable;
+use Laratrust\Traits\LaratrustUserTrait;
+use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use GrahamCampbell\Markdown\Facades\Markdown;
-use Laratrust\Traits\LaratrustUserTrait;
 
 class User extends Authenticatable
 {
@@ -21,7 +22,7 @@ class User extends Authenticatable
     const REGULAR_USER = 'false';
 
     
-  
+    public $transformer = UserTransformer::class;
     /**
      * The attributes that should be cast to native types.
      *
@@ -85,15 +86,24 @@ class User extends Authenticatable
     }
 
     public function isVerified(){
-        return $this->verified== User::VERIFIED_USER;
+        return $this->verified == User::VERIFIED_USER;
     }
 
     public function isAdmin(){
-        return $this->verified== User::ADMIN_USER;
+        return $this->verified == User::ADMIN_USER;
     }
 
     public static function generateVerificationCode()
     {
         return str_random(40);
+    }
+
+    public function setNameAttribute($name)
+    {
+        $this->attributes['name']=strtolower($name);
+    }
+    public function getNameAttribute($name)
+    {
+        return ucwords($name);
     }
 }

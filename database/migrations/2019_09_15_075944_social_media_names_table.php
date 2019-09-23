@@ -16,6 +16,7 @@ class SocialMediaNamesTable extends Migration
         Schema::create('social_media_names', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->timestamps();
         });
     }
 

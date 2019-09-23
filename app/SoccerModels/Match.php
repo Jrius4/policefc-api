@@ -2,14 +2,13 @@
 
 namespace App\SoccerModels;
 
-use Illuminate\Database\Eloquent\Model;
+use App\MatchReport;
 use App\SoccerModels\Team;
+use Illuminate\Database\Eloquent\Model;
 
 class Match extends Model
 {
     protected $fillable = [
-        'home_team_id',
-        'away_team_id',
         'date',
         'venue',
         'home_team_score',
@@ -19,5 +18,10 @@ class Match extends Model
     public function teams()
     {
         return $this->belongsToMany(Team::class);
+    }
+
+    public function matchReport()
+    {
+        return $this->has(MatchReport::class);
     }
 }

@@ -2,33 +2,28 @@
 
 namespace App\SoccerModels;
 
+use App\PlayerCategory;
 use App\SoccerModels\PlayerFoot;
 use App\SoccerModels\PlayerPosition;
+use App\Transformers\PlayerTransformer;
 use Illuminate\Database\Eloquent\Model;
 use App\SoccerModels\PlayerSocialMediaLink;
 
 class Player extends Model
 {
-    const LEFT = 'left';
-    const RIGHT = 'right';
-    const BOTH = 'both';
-
-    const GOAL_KEEPER = 'goal keeper';
-    const DEFENDER = 'defender';
-    const MID_FIELDER = 'mid fielder';
-    const STRIKER = 'striker';
-
-
+    public $transformer = PlayerTransformer::class;
     protected $fillable = [
         'profile_pic',
         'first_name',
         'last_name',
-        'position',
-        'strong_foot',
+        'player_position_id',
+        'strong_foot_id',
+        'shirt_no',
         'age',
-        'country',
+        'nationality',
         'previous_club',
-        'bio'
+        'bio',
+        'player_category_id'
     ];
 
     public function playerSocialMediaLinks(){
@@ -41,5 +36,9 @@ class Player extends Model
 
     public function playerPosition(){
         return $this->belongsTo(PlayerPosition::class);
+    }
+
+    public function playerCategory(){
+        return $this->belongsTo(PlayerCategory::class);
     }
 }

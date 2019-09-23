@@ -1,4 +1,4 @@
-<div class="container-fluid main-menubar">
+{{-- <div class="container-fluid main-menubar">
 
         <nav class="navbar container-fluid navbar-expand-lg navbar-dark bg-transparent">
             <a class="logo mr-2 ml-2" href="/">
@@ -80,7 +80,44 @@
             </div>
           </nav>
 
-        </div>
+        </div> --}}
+
+        <nav className="navbar container-fluid navbar-expand-lg navbar-dark bg-transparent">
+          <div className="container">
+            <a className="logo mr-2 ml-2" href="/">
+              Police FC
+            </a>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#mobile-nav"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+  
+            <div className="collapse navbar-collapse" id="mobile-nav">
+              <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                  <a className="nav-link" href="/">
+                   
+                    Home
+                  </a>
+                </li>
+                
+              </ul>
+              <ul className="navbar-nav ml-auto">
+                 
+                  <li className="nav-item">
+                      <a className="nav-link" href="/platform" target="_blanck">
+                          Platform
+                      </a>
+                  </li>
+                  
+              </ul>   
+            </div>
+          </div>
+        </nav>
 
       {{-- navigation bar --}}
         

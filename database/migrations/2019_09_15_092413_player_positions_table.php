@@ -17,6 +17,7 @@ class PlayerPositionsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('abbrev')->nullable();
+            $table->timestamps();
         });
     }
 

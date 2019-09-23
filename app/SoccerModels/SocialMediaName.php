@@ -8,6 +8,11 @@ use App\SoccerModels\SupportMemberSocialMediaLink;
 
 class SocialMediaName extends Model
 {
+    const FACEBOOK = 'facebook';
+    const LINKEDIN = 'linkedin';
+    const TWITTER = 'twitter';
+
+
     protected $fillable = [
         'name',
     ];

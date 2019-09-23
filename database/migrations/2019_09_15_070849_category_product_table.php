@@ -13,11 +13,11 @@ class CategoryProductTable extends Migration
      */
     public function up()
     {
-        Schema::create('category_product', function (Blueprint $table) {
-            $table->bigInteger('category_id')->unsigned();
+        Schema::create('product_product_category', function (Blueprint $table) {
+            $table->bigInteger('product_category_id')->unsigned();
             $table->bigInteger('product_id')->unsigned();
 
-            $table->foreign('category_id')->references('id')->on('product_categories');
+            $table->foreign('product_category_id')->references('id')->on('product_categories');
             $table->foreign('product_id')->references('id')->on('products');
         });
     }
@@ -29,6 +29,6 @@ class CategoryProductTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_product');
+        Schema::dropIfExists('product_product_category');
     }
 }
