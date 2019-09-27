@@ -18,9 +18,11 @@ class PostCommentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index($id)
-    {
+    { 
         $post=Post::findOrFail($id);
         $comments=$post->where('id',$id)->with('comments')->get()->pluck('comments')->collapse();
+
+        $comments=collect($comments)->sortByDesc('created_at');
        
         $comments = $this->paginate($comments);
 

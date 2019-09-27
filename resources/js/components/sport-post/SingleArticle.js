@@ -5,11 +5,11 @@ import isEmpty from "../../validation/is-empty";
 import {Link} from 'react-router-dom';
 import PostItem from '../Posts/PostItem';
 import ContentItem from './ContentItem';
-import CommentFeed from './CommentFeed';
 import CommentForm from './CommentForm';
 
-import {getPost} from '../../actions/postActions';
+import {getPost,getPostComments} from '../../actions/postActions';
 import Spinner from '../../common/Spinner';
+import CommentFeed from './CommentFeed';
 
 
 class SingleArticle extends Component {
@@ -22,18 +22,12 @@ class SingleArticle extends Component {
 
     componentDidMount() {
         this.props.getPost(this.props.match.params.postId);
+        this.props.getPostComments(this.props.postId);
       }
       
-    //   componentDidMount(){
-    //     axios.get(`/api/sport-posts/${this.props.match.params.postId}`)
-    //     .then(response=>
-    //         this.setState({post:response.data})
-    //         )
-    //     .catch(err=>console.log(err));
-    // }
+  
 
     render() {
-        // const {post} = this.state;
         const { post, loading } = this.props.post;
     let postContent;
 
@@ -52,9 +46,10 @@ class SingleArticle extends Component {
                             author={data.author}
                             body={data.body}
                             title={data.title}/>
+                            
                             <CommentFeed
-                                postId={data.id}
-                                comments={data.comments}
+                            postId={data.id}
+                            commentz={data.comments}
                             />
                             <CommentForm postId={data.id}/>
                         </div>
@@ -79,9 +74,10 @@ class SingleArticle extends Component {
 }
 SingleArticle.propTypes = {
     getPost: PropTypes.func.isRequired,
+    getPostComments: PropTypes.func.isRequired,
     post: PropTypes.object.isRequired
   };
   const mapStateToProps = state => ({
     post: state.post
   });
-  export default connect(mapStateToProps, { getPost })(SingleArticle);
+  export default connect(mapStateToProps, { getPost,getPostComments })(SingleArticle);

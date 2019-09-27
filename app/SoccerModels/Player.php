@@ -17,7 +17,7 @@ class Player extends Model
         'first_name',
         'last_name',
         'player_position_id',
-        'strong_foot_id',
+        'player_foot_id',
         'shirt_no',
         'age',
         'nationality',
@@ -40,5 +40,35 @@ class Player extends Model
 
     public function playerCategory(){
         return $this->belongsTo(PlayerCategory::class);
+    }
+
+    public function getProfilePicUrlAttribute($value)
+    {
+        $profilePicUrl = "";
+
+        if ( ! is_null($this->profile_pic))
+        {
+            $directory = config('cms.players-images.directory');
+            $imagePath = public_path() . "/{$directory}/" . $this->profile_pic;
+            if (file_exists($imagePath)) $profilePicUrl = asset("{$directory}/" . $this->profile_pic);
+        }
+
+        return $profilePicUrl;
+    }
+
+    public function getProfilePicThumbUrlAttribute($value)
+    {
+        $profilePicUrl = "";
+
+        if ( ! is_null($this->profile_pic))
+        {
+            $directory = config('cms.players-images.directory');
+            $ext       = substr(strrchr($this->profile_pic, '.'), 1);
+            $thumbnail = str_replace(".{$ext}", "_thumb.{$ext}", $this->profile_pic);
+            $imagePath = public_path() . "/{$directory}/" . $thumbnail;
+            if (file_exists($imagePath)) $profilePicUrl = asset("{$directory}/" . $thumbnail);
+        }
+
+        return $profilePicUrl;
     }
 }

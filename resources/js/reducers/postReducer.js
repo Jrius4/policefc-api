@@ -2,7 +2,7 @@ import {ADD_POST,POST_LOADING, GET_POSTS,GET_POSTS_PAGES,DELETE_POST, GET_POST, 
 const initialState ={
     posts: [],
     post:[],
-    commnents: [],
+    comments: [],
     loading:false
 };
 

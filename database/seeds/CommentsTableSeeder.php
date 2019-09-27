@@ -20,7 +20,7 @@ class CommentsTableSeeder extends Seeder
         $posts = Post::published()->latest()->take(5)->get();
         foreach ($posts as $post)
         {
-            for ($i = 1; $i <= rand(1, 10); $i++)
+            for ($i = 1; $i <= rand(1, 5); $i++)
             {
                 $commentDate = $post->published_at->modify("+{$i} hours");
 

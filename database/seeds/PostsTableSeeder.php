@@ -21,7 +21,7 @@ class PostsTableSeeder extends Seeder
         $faker = Factory::create();
         $date = Carbon::now()->modify('-1 year');
 
-        for ($i = 1; $i <= 36; $i++)
+        for ($i = 1; $i <= 20; $i++)
         {
             $image = "Post_Image_" . rand(1, 5) . ".jpg";
             $date->addDays(10);

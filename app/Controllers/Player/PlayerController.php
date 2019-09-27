@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Player;
 
+use App\PlayerCategory;
 use App\SoccerModels\Player;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,6 +19,13 @@ class PlayerController extends ApiController
     {
         $players=  Player::all();
         return $this->showAll($players);
+    }
+
+    public function indexCategory()
+    {
+        $playerCategories=  PlayerCategory::all();
+        $playerCategories = collect($playerCategories);
+        return response()->json($playerCategories,200);
     }
 
 

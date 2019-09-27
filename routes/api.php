@@ -28,6 +28,7 @@ Route::get('/posts',function(){
 Players
 */
 Route::resource('/players','Player\PlayerController',['only'=>['index','show','store']]);
+Route::get('/player-categories','Player\PlayerController@indexCategory');
 Route::resource('/players.categories','Player\PlayerCategoryPlayerController',['only'=>['index']]);
 
 /*

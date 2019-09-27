@@ -21,7 +21,6 @@ class CommentFeed extends Component {
                 totalItemsCount:null,
                 pageRangeDisplayed:3,
                 onChange:null,
-                postId:null
         }
         this.onChangePage = this.onChangePage.bind(this)
     }
@@ -33,32 +32,58 @@ class CommentFeed extends Component {
       this.props.handleCommentsPageChange(this.props.postId,pageNumber);
     }
   render() {
-    const { postId } = this.props;
-    const { post,loading,comments } = this.props.post;
+    const { post,loading,comments,itemsCountPerPage,totalItemsCount,activePage } = this.props.post;
     let commentContent;
 
-    if(comments === null || loading || Object.keys(post).length === 0)
+    if(post === null || comments === null || loading || Object.keys(post).length === 0)
     {
-      postContent = <Spinner />;
+      commentContent = <Spinner />;
     }
     else{
       commentContent = (
           <div>
-            <h2>Comments Loaded</h2>
-            <CommentList comments={comments}/>
+            <h2>{totalItemsCount} Comment(s)</h2>
+            {/* <CommentList comments={comments} postId={postId}/> */}
+            {comments.map((data,index)=>(
+               <div key={index} className="card card-body col-md-8 mb-3">
+               <div className="row">
+                 <div className="col-md-2">
+                   <a href="profile.html">
+                     <span>
+                       {data.author_name}
+                     </span>
+                       
+                   </a>
+                   <br />
+                   <p className="text-center">{data.author_name}</p>
+                 </div>
+                 <div className="col-md-10">
+                   <p className="lead">{data.body}</p>
+                   
+                 </div>
+               </div>
+             </div>
+            ))}
+
+              <div className="d-flex justify-content-center">
+                    <h3>Comments' Page {activePage}</h3>
+                    <hr/>
+                    <Pagination
+                                activePage={activePage}
+                                itemsCountPerPage={itemsCountPerPage}
+                                totalItemsCount={totalItemsCount}
+                                pageRangeDisplayed={this.state.pageRangeDisplayed}
+                                onChange={this.onChangePage}
+                                itemClass='page-item'
+                                linkClass='page-link'
+                    />
+                </div>
           </div>
       );
     }
 
     return (
       <div>
-        {/* <div>
-          <h4>Comments {comments.length}</h4>
-        </div>
-        
-        {
-          comments.map(comment => <CommentItem key={comment.id} comment={comment} postId={postId} />)
-        } */}
         {commentContent}
       </div>
     );
@@ -70,12 +95,12 @@ CommentFeed.propTypes = {
   getPostComments: PropTypes.func.isRequired,
   handleCommentsPageChange: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
-  postId: PropTypes.number.isRequired,
   comments: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = state => ({
-  post: state.post
+  post: state.post,
+  comments: state.post.comments
 });
 
 export default connect(mapStateToProps, { getPostComments,handleCommentsPageChange })(CommentFeed);

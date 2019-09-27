@@ -13,7 +13,7 @@ class SupportMember extends Model
     public $transformer = SupportMemberTransformer::class;
     protected $fillable = [
         'profile_pic',
-        'position_id',
+        'support_member_position_id',
         'firstname',
         'lastname',
         'bio',
@@ -26,5 +26,35 @@ class SupportMember extends Model
 
     public function supportMemberPosition(){
         return $this->belongsTo(SupportMemberPosition::class);
+    }
+
+    public function getProfilePicUrlAttribute($value)
+    {
+        $profilePicUrl = "";
+
+        if ( ! is_null($this->profile_pic))
+        {
+            $directory = config('cms.support-team-images.directory');
+            $imagePath = public_path() . "/{$directory}/" . $this->profile_pic;
+            if (file_exists($imagePath)) $profilePicUrl = asset("{$directory}/" . $this->profile_pic);
+        }
+
+        return $profilePicUrl;
+    }
+
+    public function getProfilePicThumbUrlAttribute($value)
+    {
+        $profilePicUrl = "";
+
+        if ( ! is_null($this->profile_pic))
+        {
+            $directory = config('cms.support-team-images.directory');
+            $ext       = substr(strrchr($this->profile_pic, '.'), 1);
+            $thumbnail = str_replace(".{$ext}", "_thumb.{$ext}", $this->profile_pic);
+            $imagePath = public_path() . "/{$directory}/" . $thumbnail;
+            if (file_exists($imagePath)) $profilePicUrl = asset("{$directory}/" . $thumbnail);
+        }
+
+        return $profilePicUrl;
     }
 }

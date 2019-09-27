@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CommentItem from './CommentItem';
 
-class CommentFeed extends Component {
+class CommentFeedNew extends Component {
   render() {
     const { comments, postId } = this.props;
 
@@ -21,9 +21,9 @@ class CommentFeed extends Component {
   }
 }
 
-CommentFeed.propTypes = {
+CommentFeedNew.propTypes = {
   comments: PropTypes.array.isRequired,
   postId: PropTypes.number.isRequired
 };
 
-export default CommentFeed;
+export default CommentFeedNew;

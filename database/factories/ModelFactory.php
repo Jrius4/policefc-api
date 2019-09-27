@@ -95,7 +95,7 @@ $factory->define(SupportMember::class, function (Faker $faker) {
         'firstname' => $faker->name,
         'lastname' => $faker->name,
         'profile_pic' => $faker->randomElement(['trainer-img1.jpg','trainer-img.jpg','trainer-img2.jpg']),
-        'position_id' => $faker->numberBetween(1,8),
+        'support_member_position_id' => $faker->numberBetween(1,8),
         'bio' => $faker->paragraph(1),
         'is_executive'=>$faker->randomElement([SupportMember::TECHNICAL_Member,SupportMember::Executive_Member]),
     ];
@@ -103,8 +103,8 @@ $factory->define(SupportMember::class, function (Faker $faker) {
 
 $factory->define(SupportMemberSocialMediaLink::class, function (Faker $faker) {
     return [
-        'support_member_id' => $faker->numberBetween(1,8),
-        'social_media_name_id' => $faker->numberBetween(1,8),
+        'support_member_id' => $faker->numberBetween(1,5),
+        'social_media_name_id' => $faker->numberBetween(1,4),
         'url' => $faker->name.'.'.$faker->randomElement(['facebook.com','linkedin.com','twitter.com']),
     ];
 });
@@ -132,7 +132,7 @@ $factory->define(Player::class, function (Faker $faker) {
         'first_name'=>$faker->name,
         'last_name'=>$faker->name,
         'player_position_id' => $faker->numberBetween(1,4),
-        'strong_foot_id' => $faker->numberBetween(1,3),
+        'player_foot_id' => $faker->numberBetween(1,3),
         'shirt_no' => $faker->numberBetween(1,10),
         'age' => $faker->numberBetween(17,25),
         'nationality' => $faker->randomElement(['Ugandan','Sudanese','Kenyan','Rwandanese']),
@@ -144,8 +144,8 @@ $factory->define(Player::class, function (Faker $faker) {
 
 $factory->define(PlayerSocialMediaLink::class, function (Faker $faker) {
     return [
-        'player_id' => $faker->numberBetween(1,15),
-        'social_media_name_id' => $faker->numberBetween(1,8),
+        'player_id' => $faker->numberBetween(1,10),
+        'social_media_name_id' => $faker->numberBetween(1,4),
         'url' => $faker->name.'.'.$faker->randomElement(['facebook.com','linkedin.com','twitter.com']),
     ];
 });
@@ -179,7 +179,7 @@ $factory->define(MatchReport::class,function(Faker $faker){
         'image'=> $faker->randomElement(['trainer-img1.jpg','trainer-img.jpg','trainer-img2.jpg']),
         'title'=> $faker->sentence,
         'body'=> $faker->paragraph(2),
-        'match_reports_match_id'=> $faker->numberBetween(1,20),
+        'match_reports_match_id'=> $faker->numberBetween(1,10),
     ];
 });
 
@@ -195,7 +195,7 @@ $factory->define(Achievement::class,function(Faker $faker){
         'title'=> $faker->sentence,
         'overview'=> $faker->sentence,
         'body'=> $faker->paragraph(2),
-        'achievement_category_id'=> $faker->numberBetween(1,10),
+        'achievement_category_id'=> $faker->numberBetween(1,2),
     ];
 });
 
@@ -211,7 +211,7 @@ $factory->define(Era::class,function(Faker $faker){
         'image'=> $faker->randomElement(['trainer-img1.jpg','trainer-img.jpg','trainer-img2.jpg']),
         'title'=> $faker->sentence,
         'text'=> $faker->paragraph(2),
-        'era_category_id'=> $faker->numberBetween(1,10),
+        'era_category_id'=> $faker->numberBetween(1,5),
     ];
 });
 
@@ -227,7 +227,7 @@ $factory->define(Video::class,function(Faker $faker){
         'title'=> $faker->sentence,
         'overview'=> $faker->word,
         'body'=> $faker->paragraph(2),
-        'video_category_id'=> $faker->numberBetween(1,10),
+        'video_category_id'=> $faker->numberBetween(1,3),
     ];
 });
 
@@ -242,6 +242,6 @@ $factory->define(WallOfFame::class,function(Faker $faker){
         'image'=> $faker->randomElement(['trainer-img1.jpg','trainer-img.jpg','trainer-img2.jpg']),
         'title'=> $faker->sentence,
         'text'=> $faker->paragraph(2),
-        'wall_of_fame_category_id'=> $faker->numberBetween(1,10),
+        'wall_of_fame_category_id'=> $faker->numberBetween(1,4),
     ];
 });

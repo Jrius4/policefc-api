@@ -52,7 +52,7 @@ export const getPosts = () => dispatch => {
 };
 
 export const getPostComments = (postId) => dispatch => {
- 
+  
   axios
     .get(`/api/sport-posts/${postId}/comments`)
     .then(res =>
@@ -189,6 +189,7 @@ export const addComment = (postId, commentData) => dispatch => {
         payload: err.response.data
       })
     );
+    dispatch(getPost());
 };
 
 // Delete Comment
