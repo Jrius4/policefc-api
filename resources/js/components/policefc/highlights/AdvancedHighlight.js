@@ -1,9 +1,9 @@
 import React from 'react'
-import Slider from 'react-animated-slider';
+import Slider from 'react-animated-slider-2';
 import 'normalize.css/normalize.css';
 import './slider-animations.css';
 import './styles.css';
-import 'react-animated-slider/build/horizontal.css';
+import 'react-animated-slider-2/build/horizontal.css';
 const AdvancedHighlight = (props) => {
   return (
     

@@ -7405,10 +7405,10 @@ exports.push([module.i, "/*! normalize.css v8.0.1 | MIT License | github.com/nec
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-animated-slider/build/horizontal.css":
-/*!*************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/react-animated-slider/build/horizontal.css ***!
-  \*************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-animated-slider-2/build/horizontal.css":
+/*!***************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/react-animated-slider-2/build/horizontal.css ***!
+  \***************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7417,7 +7417,7 @@ exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base
 
 
 // module
-exports.push([module.i, ".slider {\n\tposition: relative;\n\twidth: 100%;\n\theight: 400px;\n\toverflow: hidden\n}\n\n.slider a.previousButton, .slider a.nextButton {\n\tfont-size: 22px;\n\tline-height: 0;\n\tdisplay: block;\n\tposition: absolute;\n\ttop: 50%;\n\ttransform: translateY(-50%);\n\ttransition: all .3s linear;\n\tz-index: 1;\n\tcolor: #333;\n\tpadding: 10px;\n\ttext-decoration: none;\n\t-webkit-backface-visibility: hidden;\n\t        backface-visibility: hidden\n\t/* prevent jump effect when scaling */\n}\n\n.slider a.previousButton:not(.disabled):hover, .slider a.nextButton:not(.disabled):hover {\n\ttransform: translateY(-50%) scale(1.25);\n\tcursor: pointer;\n}\n\n.slider a.previousButton {\n\tleft: 20px;\n}\n\n.slider a.nextButton {\n\tright: 20px;\n}\n\n.slide {\n\twidth: 100%;\n\theight: 100%;\n\tposition: absolute;\n\toverflow: hidden\n}\n\n.slide.hidden {\n\tvisibility: hidden;\n}\n\n.slide.previous {\n\tleft: -100%;\n}\n\n.slide.current {\n\tleft: 0;\n}\n\n.slide.next {\n\tleft: 100%;\n}\n\n.slide.animateIn,\n\t.slide.animateOut {\n\ttransition: all 2s ease;\n}\n\n.slide.animateIn.previous,\n\t\t.slide.animateIn.next {\n\tleft: 0;\n\tvisibility: visible;\n}\n\n.slide.animateOut.previous {\n\tleft: 100%;\n}\n\n.slide.animateOut.next {\n\tleft: -100%;\n}\n\n", ""]);
+exports.push([module.i, ".slider {\r\n\tposition: relative;\r\n\twidth: 100%;\r\n\theight: 50px;\r\n\toverflow: hidden;\r\n\ttext-align: center;\r\n\tpadding-top: 10%;\r\n\tz-index: 0;\r\n}\r\n\r\n.slider a.previousButton, .slider a.nextButton {\r\n\tfont-size: 22px;\r\n\tline-height: 0;\r\n\tdisplay: block;\r\n\tposition: absolute;\r\n\ttop: 50%;\r\n\ttransform: translateY(-50%);\r\n\ttransition: all .0.5s linear;\r\n\tz-index: 1;\r\n\tcolor: #333;\r\n\tpadding: 10px;\r\n\ttext-decoration: none;\r\n\t-webkit-backface-visibility: hidden;\r\n\t        backface-visibility: hidden\r\n\t/* prevent jump effect when scaling */\r\n}\r\n\r\n.slider a.previousButton:not(.disabled):hover, .slider a.nextButton:not(.disabled):hover {\r\n\ttransform: translateY(-50%) scale(1.25);\r\n\tcursor: pointer;\r\n}\r\n\r\n.disabled{\r\n\r\n\tvisibility: hidden;\r\n}\r\n\r\n.slider a.previousButton {\r\n\tleft: 10px;\r\n}\r\n\r\n.slider a.nextButton {\r\n\tright: 10px;\r\n}\r\n\r\n.slide {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tposition: absolute;\r\n\toverflow: hidden\r\n}\r\n\r\n.slide.hidden {\r\n\tvisibility: hidden;\r\n}\r\n\r\n.slide.previous {\r\n\tleft: -100%;\r\n}\r\n\r\n.slide.current {\r\n\tleft: 0;\r\n}\r\n\r\n.slide.next {\r\n\tleft: 100%;\r\n}\r\n\r\n.slide.animateIn,\r\n\t.slide.animateOut {\r\n\ttransition: all 0.5s ease;\r\n}\r\n\r\n.slide.animateIn.previous,\r\n\t\t.slide.animateIn.next {\r\n\tleft: 0;\r\n\tvisibility: visible;\r\n}\r\n\r\n.slide.animateOut.previous {\r\n\tleft: 100%;\r\n}\r\n\r\n.slide.animateOut.next {\r\n\tleft: -100%;\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -7507,12 +7507,13 @@ exports.push([module.i, ".slide h1 {\n\ttransition: all 0.3s ease;\n\ttransform:
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900);", ""]);
 
 // module
-exports.push([module.i, "body {\n  font-family: 'Lato', sans-serif;\n  box-sizing: border-box;\n  padding-top: 75px;\n}\n\nheader {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 75px;\n  background: #000000;\n  z-index: 10;\n}\n\nheader section {\n  max-width: 1300px;\n  margin: auto;\n  padding: 20px;\n  background: #010411;\n}\n\n@media (max-width: 1515px) {\n  header section {\n    max-width: 100%;\n  } \n}\n\nheader section .logo {\n  transform: translateX(-87px);\n}\n\nheader section a {\n  float: right;\n  padding: 3px 0;\n}\n\n* {\n  outline: none;\n}\n\nbutton {\n  -webkit-appearance: none;\n          -moz-appearance: none;\n       appearance: none;\n  -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));\n          filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));\n  -webkit-transition: all .5s ease;\n         filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));\n  transition: all .5s ease;\n  border: none;\n  color:#FFFFFF;\n  background: #010411;\n  border-radius: 30px;\n  text-transform: uppercase;\n  box-sizing: border-box;\n  padding: 15px 40px;\n  font-weight: 400;\n  font-size: 13px;\n  cursor: cursor;\n}\n\nbutton:hover {\n  color: #222222;\n  background: #FFFFFF;\n  -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));\n          filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));\n}\n\n.wrapper {\n  max-width: 1335px;\n  box-sizing: border-box;\n  padding: 0 20px;\n  margin: auto;\n}\n\n.wrapper a {\n  display: inline-block;\n  margin: 5px;\n}\n\n.wrapper a:first-child {\n  margin-left: 0;\n}\n\n.slider-wrapper {\n  position: relative;\n  height: 70vh;\n  overflow: hidden;\n}\n\n.slide {\n  height: 70vh;\n  background-size: cover !important;\n}\n\n.slide::before {\n    content: '';\n    display: block;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));\n    bottom: 0;\n    left: 0;\n}\n\n.previousButton, .nextButton {\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\ttransform: translateY(-50%);\n\t\tz-index: 10;\n\t\tbackground: url('http://svgshare.com/i/41_.svg') no-repeat center center / 16px;\n\t\twidth: 32px;\n\t\theight: 32px;\n\t\ttext-indent: -9999px;\n\t\tcursor: pointer;\n}\n\n.previousButton:hover, .nextButton:hover {\n  background: url('http://svgshare.com/i/41_.svg') no-repeat center center / 16px;\n}\n\n.previousButton {\n  left: 0;\n  transform: rotate(180deg) translateY(calc(50% + 0px));\n}\n\n.previousButton:hover {\n  left: -10px;\n}\n\n.nextButton {\n  right: 0;\n}\n\n.nextButton:hover {\n  right: -10px;\n}\n\n.slider-content {\n  text-align: center;\n}\n\n.slider-content .inner {\n  padding: 0 70px;\n  box-sizing: border-box;\n  position: absolute;\n  width: 100%;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n.slider-content .inner button{\n  transition-delay: 0s;\n}\n\n.slider-content .inner h1 {\n  font-weight: 900;\n  margin: 0 auto;\n  max-width: 840px;\n  color: #FFFFFF;\n  font-size: 64px;\n  line-height: 1;\n}\n\n.slider-content .inner p {\n  color: #FFFFFF;\n  font-size: 14px;\n  line-height: 1.5;\n  margin: 20px auto 30px;\n  max-width: 640px;\n}\n\n.slider-content section {\n  position: absolute;\n  bottom: 20px;\n  left: 20px;\n}\n\n.slider-content section span {\n  color: #FFFFFF;\n}\n\n.slider-content section span {\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 12px;\n  display: inline-block;\n  text-align: left;\n  line-height: 1.4;\n  vertical-align: middle;\n  margin-left: 10px;\n}\n\n.slider-content section img {\n  width: 40px;\n  height: 40px;\n  border: solid 2px rgba(255, 255, 255, 0.5);\n  border-radius: 100%;\n  vertical-align: middle;\n}\n\n.slider-content section span strong {\n  color: #FFFFFF;\n  font-size: 14px;\n  display: block;\n}\n\n@media (max-height: 500px) {\n  .slider-wrapper, .slide {\n    height: calc(100vh - 75px);\n  }    \n}\n\n@media (max-width: 640px) {\n  .slider-wrapper, .slide {\n    height: calc(80vh - 75px);\n  }    \n}\n\n@media (max-height: 600px) {\n  .slider-content .inner h1 {\n    font-size: 32px;\n  }    \n}\n\n@media (max-width: 640px) {\n  .slider-content .inner h1 {\n    font-size: 32px;\n  }\n}\n.showcase{\n  min-height: 80vh;\n}", ""]);
+exports.push([module.i, "body {\n  font-family: 'Lato', sans-serif;\n  box-sizing: border-box;\n  padding-top: 75px;\n}\n\nheader {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 75px;\n  background: #000000;\n  z-index: 10;\n}\n\nheader section {\n  max-width: 1300px;\n  margin: auto;\n  padding: 20px;\n  background: #010411;\n}\n\n@media (max-width: 1515px) {\n  header section {\n    max-width: 100%;\n  } \n}\n\nheader section .logo {\n  transform: translateX(-87px);\n}\n\nheader section a {\n  float: right;\n  padding: 3px 0;\n}\n\n* {\n  outline: none;\n}\n\nbutton {\n  -webkit-appearance: none;\n          -moz-appearance: none;\n       appearance: none;\n  -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));\n          filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));\n  -webkit-transition: all .5s ease;\n         filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));\n  transition: all .5s ease;\n  border: none;\n  color:#FFFFFF;\n  background: #010411;\n  border-radius: 30px;\n  text-transform: uppercase;\n  box-sizing: border-box;\n  padding: 15px 40px;\n  font-weight: 400;\n  font-size: 13px;\n  cursor: cursor;\n}\n\nbutton:hover {\n  color: #222222;\n  background: #FFFFFF;\n  -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));\n          filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));\n}\n\n.wrapper {\n  max-width: 1335px;\n  box-sizing: border-box;\n  padding: 0 20px;\n  margin: auto;\n}\n\n.wrapper a {\n  display: inline-block;\n  margin: 5px;\n}\n\n.wrapper a:first-child {\n  margin-left: 0;\n}\n\n.slider-wrapper {\n  position: relative;\n  height: 70vh;\n  overflow: hidden;\n}\n\n.slide {\n  height: 70vh;\n  background-size: cover !important;\n}\n\n.slide::before {\n    content: '';\n    display: block;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));\n    bottom: 0;\n    left: 0;\n}\n\n.previousButton, .nextButton {\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\ttransform: translateY(-50%);\n\t\tz-index: 10;\n\t\tbackground: url(" + escape(__webpack_require__(/*! ./icons8-wide-right-arrow-64.png */ "./resources/js/components/policefc/highlights/icons8-wide-right-arrow-64.png")) + ") no-repeat center center / 16px;\n\t\twidth: 32px;\n\t\theight: 32px;\n\t\ttext-indent: -9999px;\n\t\tcursor: pointer;\n}\n\n.previousButton:hover, .nextButton:hover {\n  background: url(" + escape(__webpack_require__(/*! ./icons8-wide-right-arrow-64.png */ "./resources/js/components/policefc/highlights/icons8-wide-right-arrow-64.png")) + ") no-repeat center center / 16px;\n}\n\n.previousButton {\n  left: 0;\n  transform: rotate(180deg) translateY(calc(50% + 0px));\n}\n\n.previousButton:hover {\n  left: -10px;\n}\n\n.nextButton {\n  right: 0;\n}\n\n.nextButton:hover {\n  right: -10px;\n}\n\n.slider-content {\n  text-align: center;\n}\n\n.slider-content .inner {\n  padding: 0 70px;\n  box-sizing: border-box;\n  position: absolute;\n  width: 100%;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n.slider-content .inner button{\n  transition-delay: 0s;\n}\n\n.slider-content .inner h1 {\n  font-weight: 900;\n  margin: 0 auto;\n  max-width: 840px;\n  color: #FFFFFF;\n  font-size: 64px;\n  line-height: 1;\n}\n\n.slider-content .inner p {\n  color: #FFFFFF;\n  font-size: 14px;\n  line-height: 1.5;\n  margin: 20px auto 30px;\n  max-width: 640px;\n}\n\n.slider-content section {\n  position: absolute;\n  bottom: 20px;\n  left: 20px;\n}\n\n.slider-content section span {\n  color: #FFFFFF;\n}\n\n.slider-content section span {\n  color: rgba(255, 255, 255, 0.5);\n  font-size: 12px;\n  display: inline-block;\n  text-align: left;\n  line-height: 1.4;\n  vertical-align: middle;\n  margin-left: 10px;\n}\n\n.slider-content section img {\n  width: 40px;\n  height: 40px;\n  border: solid 2px rgba(255, 255, 255, 0.5);\n  border-radius: 100%;\n  vertical-align: middle;\n}\n\n.slider-content section span strong {\n  color: #FFFFFF;\n  font-size: 14px;\n  display: block;\n}\n\n@media (max-height: 500px) {\n  .slider-wrapper, .slide {\n    height: calc(100vh - 75px);\n  }    \n}\n\n@media (max-width: 640px) {\n  .slider-wrapper, .slide {\n    height: calc(80vh - 75px);\n  }    \n}\n\n@media (max-height: 600px) {\n  .slider-content .inner h1 {\n    font-size: 32px;\n  }    \n}\n\n@media (max-width: 640px) {\n  .slider-content .inner h1 {\n    font-size: 32px;\n  }\n}\n.showcase{\n  min-height: 80vh;\n}\n", ""]);
 
 // exports
 
@@ -7601,6 +7602,33 @@ function toComment(sourceMap) {
 	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
 
 	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/url/escape.js":
+/*!***************************************************!*\
+  !*** ./node_modules/css-loader/lib/url/escape.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function escape(url) {
+    if (typeof url !== 'string') {
+        return url
+    }
+    // If url is already wrapped in quotes, remove them
+    if (/^['"].*['"]$/.test(url)) {
+        url = url.slice(1, -1);
+    }
+    // Should url be wrapped?
+    // See https://drafts.csswg.org/css-values-3/#urls
+    if (/["'() \t\n]/.test(url)) {
+        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
+    }
+
+    return url
 }
 
 
@@ -59917,15 +59945,15 @@ module.exports = ReactPropTypesSecret;
 
 /***/ }),
 
-/***/ "./node_modules/react-animated-slider/build/horizontal.css":
-/*!*****************************************************************!*\
-  !*** ./node_modules/react-animated-slider/build/horizontal.css ***!
-  \*****************************************************************/
+/***/ "./node_modules/react-animated-slider-2/build/horizontal.css":
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-animated-slider-2/build/horizontal.css ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./horizontal.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-animated-slider/build/horizontal.css");
+var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./horizontal.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-animated-slider-2/build/horizontal.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -59947,21 +59975,312 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/react-animated-slider/build/index.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/react-animated-slider/build/index.js ***!
-  \***********************************************************/
+/***/ "./node_modules/react-animated-slider-2/build/index.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-animated-slider-2/build/index.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports=function(e){var t={};function n(i){if(t[i])return t[i].exports;var r=t[i]={i:i,l:!1,exports:{}};return e[i].call(r.exports,r,r.exports,n),r.l=!0,r.exports}return n.m=e,n.c=t,n.d=function(e,t,i){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:i})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var i=Object.create(null);if(n.r(i),Object.defineProperty(i,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)n.d(i,r,function(t){return e[t]}.bind(null,r));return i},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=5)}({4:function(e,t){e.exports=__webpack_require__(/*! react */ "./node_modules/react-animated-slider/node_modules/react/index.js")},5:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.VERTICAL=t.HORIZONTAL=void 0;var i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var i in n)Object.prototype.hasOwnProperty.call(n,i)&&(e[i]=n[i])}return e},r=function(){function e(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(t,n,i){return n&&e(t.prototype,n),i&&e(t,i),t}}(),o=function(e){return e&&e.__esModule?e:{default:e}}(n(4));var s="previous",a="next",l=t.HORIZONTAL="horizontal",u=(t.VERTICAL="vertical",{previousButton:"previousButton",nextButton:"nextButton",buttonDisabled:"disabled",track:"track",slide:"slide",hidden:"hidden",previous:"previous",current:"current",next:"next",animateIn:"animateIn",animateOut:"animateOut"}),p=2e3,c={up:"rotate(90 10 15)",down:"rotate(270 10 15)",left:"rotate(180 10 15)",right:"rotate(0 10 15)"};function d(e){var t=e.direction,n=void 0===t?"right":t;return o.default.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:"20",height:"30",viewBox:"0 0 20 30"},o.default.createElement("polygon",{fill:"#000",points:"20 15 4.228 0 0 3.626 11.954 15 0 26.374 4.228 30",transform:c[n]}))}var m=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var n=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));n.setupAutoplay=function(){n.props.autoplay&&!n.isMouseOver&&(n.stopAutoplay(),n.autoplayTimerId=setInterval(n.next,parseInt(n.props.autoplay,10)))},n.stopAutoplay=function(){n.autoplayTimerId&&clearInterval(n.autoplayTimerId)},n.onAnimationEnd=function(){n.setState({currentSlideIndex:n.nextSlideIndex,animating:!1,animation:void 0}),n.setupAutoplay(),"function"==typeof n.props.onSlideChange&&n.props.onSlideChange({slideIndex:n.nextSlideIndex})},n.isDisabled=function(){return n.slideCount<2||n.state.animating||n.props.disabled},n.isInfinite=function(){return n.slideCount>2&&!1!==n.props.infinite},n.canGoPrevious=function(){return n.isInfinite()||n.state.currentSlideIndex>0},n.canGoNext=function(){return n.isInfinite()||n.state.currentSlideIndex<n.slideCount-1},n.goTo=function(e,t){if(!n.isDisabled()){n.nextSlideIndex=e,n.setState({animating:!0,animation:t});var i=n.props.duration||p;n.animationTimerId=setTimeout(n.onAnimationEnd,i)}},n.previous=function(){if(n.canGoPrevious()){var e=n.state.currentSlideIndex-1,t=e>=0?e:n.slideCount-1;n.goTo(t,s)}},n.next=function(){if(n.canGoNext()){var e=(n.state.currentSlideIndex+1)%n.slideCount;n.goTo(e,a)}},n.getSlideClass=function(e){var t=n.state,i=t.currentSlideIndex,r=t.animation,o=n.getClassNames(),l=n.slideCount-1;return e===i?r?o.animateOut+" "+o[r]:o.current:2===n.slideCount?r?o.animateIn+" "+o[r]:e<i?o.previous:o.next:e===i-1||0===i&&e===l?r===s?o.animateIn+" "+o.previous:r===a?o.hidden:o.previous:e===i+1||0===e&&i===l?r===a?o.animateIn+" "+o.next:r===s?o.hidden:o.next:o.hidden},n.isSwiping=!1,n.handleTouchStart=function(e){if(!n.isDisabled()){n.stopAutoplay();var t=n.getClassNames(),i=t.current,r=t.previous,o=t.next,s=e.touches[0];n.isSwiping=!0,n.pageStartPosition=s[n.swipeEventProperty],n.currentElement=n.sliderRef.getElementsByClassName(i)[0],n.previousElement=n.sliderRef.getElementsByClassName(r)[0],n.nextElement=n.sliderRef.getElementsByClassName(o)[0];var a=n.currentElement.getBoundingClientRect()[n.swipeProperty];n.currentElementStartPosition=0,n.currentElementPosition=0,n.currentElement.style.transition="none",n.previousElement&&(n.previousElement.style.transition="none",n.previousElement.style.visibility="visible",n.previousElementStartPosition=n.previousElement.getBoundingClientRect()[n.swipeProperty]-a),n.nextElement&&(n.nextElement.style.visibility="visible",n.nextElement.style.transition="none",n.nextElementStartPosition=n.nextElement.getBoundingClientRect()[n.swipeProperty]-a)}},n.animating=!1,n.handleTouchMove=function(e){e.preventDefault(),n.animating=n.animating||requestAnimationFrame(function(){if(n.isSwiping){var t=e.touches[0][n.swipeEventProperty]-n.pageStartPosition;n.currentElementPosition=n.currentElementStartPosition+t,n.currentElement.style[n.swipeProperty]=n.currentElementPosition+"px",n.previousElement&&(n.previousElementPosition=n.previousElementStartPosition+t,n.previousElement.style[n.swipeProperty]=n.previousElementPosition+"px"),n.nextElement&&(n.nextElementPosition=n.nextElementStartPosition+t,n.nextElement.style[n.swipeProperty]=n.nextElementPosition+"px"),n.animating=!1}else n.animating=!1})},n.handleTouchEnd=function(){n.animating=!1,n.isSwiping=!1,n.currentElement.style.removeProperty(n.swipeProperty),n.currentElement.style.removeProperty("transition"),n.previousElement&&(n.previousElement.style.removeProperty("visibility"),n.previousElement.style.removeProperty("transition"),n.previousElement.style.removeProperty(n.swipeProperty)),n.nextElement&&(n.nextElement.style.removeProperty("visibility"),n.nextElement.style.removeProperty("transition"),n.nextElement.style.removeProperty(n.swipeProperty));var e=n.currentElementStartPosition-n.currentElementPosition,t=n.props.minSwipeOffset||15;Math.abs(e)>t?e<0?n.previous():n.next():n.setupAutoplay()},n.getClassNames=function(){return i({},u,n.props.classNames)},n.initTouchEvents=function(e){!n.isDisabled()&&e&&(n.sliderRef=e,n.sliderRef.addEventListener("touchstart",n.handleTouchStart),n.sliderRef.addEventListener("touchmove",n.handleTouchMove,{passive:!1}),n.sliderRef.addEventListener("touchend",n.handleTouchEnd))},n.handleMouseOver=function(){n.isMouseOver=!0,n.stopAutoplay()},n.handleMouseOut=function(){n.isMouseOver=!1,n.setupAutoplay()};var r=n.props,c=r.slideIndex,d=void 0===c?0:c,m=r.direction,f=void 0===m?l:m;return n.state={currentSlideIndex:d,animating:!1},n.slideCount=o.default.Children.count(n.props.children),n.direction=f,n.swipeProperty=f===l?"left":"top",n.swipeEventProperty=f===l?"clientX":"clientY",n}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.PureComponent),r(t,[{key:"componentDidMount",value:function(){this.setupAutoplay()}},{key:"componentWillUnmount",value:function(){this.stopAutoplay(),this.animationTimerId&&clearTimeout(this.animationTimerId)}},{key:"componentWillReceiveProps",value:function(e){this.slideCount=o.default.Children.count(e.children),this.state.currentSlideIndex>=this.slideCount&&this.setState({currentSlideIndex:0})}},{key:"render",value:function(){var e=this,t=this.props,n=t.children,r=t.className,s=void 0===r?"slider":r,a=t.previousButton,u=void 0===a?o.default.createElement(d,{direction:this.direction===l?"left":"down"}):a,p=t.nextButton,c=void 0===p?o.default.createElement(d,{direction:this.direction===l?"right":"up"}):p,m=t.touchDisabled,f=t.autoplay,v=this.getClassNames(),y=this.isDisabled();return o.default.createElement("div",i({className:v.slider||s},!m&&{ref:this.initTouchEvents},f&&{onMouseOver:this.handleMouseOver,onMouseOut:this.handleMouseOut}),o.default.createElement("a",{onClick:this.previous,className:v.previousButton+(y||!this.canGoPrevious()?" "+v.buttonDisabled:"")},u),o.default.createElement("a",{onClick:this.next,className:v.nextButton+(y||!this.canGoNext()?" "+v.buttonDisabled:"")},c),o.default.createElement("div",{className:v.track},o.default.Children.map(n,function(t,n){return o.default.cloneElement(t,{key:n,className:[v.slide,e.getSlideClass(n),t.props.className].filter(function(e){return e}).join(" ")})})))}}]),t}();t.default=m}});
+module.exports = function(e) {
+    var t = {};
+
+    function n(i) {
+        if (t[i]) return t[i].exports;
+        var r = t[i] = {
+            i: i,
+            l: !1,
+            exports: {}
+        };
+        return e[i].call(r.exports, r, r.exports, n), r.l = !0, r.exports
+    }
+    return n.m = e, n.c = t, n.d = function(e, t, i) {
+        n.o(e, t) || Object.defineProperty(e, t, {
+            enumerable: !0,
+            get: i
+        })
+    }, n.r = function(e) {
+        "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+            value: "Module"
+        }), Object.defineProperty(e, "__esModule", {
+            value: !0
+        })
+    }, n.t = function(e, t) {
+        if (1 & t && (e = n(e)), 8 & t) return e;
+        if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+        var i = Object.create(null);
+        if (n.r(i), Object.defineProperty(i, "default", {
+                enumerable: !0,
+                value: e
+            }), 2 & t && "string" != typeof e)
+            for (var r in e) n.d(i, r, function(t) {
+                return e[t]
+            }.bind(null, r));
+        return i
+    }, n.n = function(e) {
+        var t = e && e.__esModule ? function() {
+            return e.default
+        } : function() {
+            return e
+        };
+        return n.d(t, "a", t), t
+    }, n.o = function(e, t) {
+        return Object.prototype.hasOwnProperty.call(e, t)
+    }, n.p = "", n(n.s = 5)
+}({
+    4: function(e, t) {
+        e.exports = __webpack_require__(/*! react */ "./node_modules/react-animated-slider-2/node_modules/react/index.js")
+    },
+    5: function(e, t, n) {
+        "use strict";
+        Object.defineProperty(t, "__esModule", {
+            value: !0
+        }), t.VERTICAL = t.HORIZONTAL = void 0;
+        var i = Object.assign || function(e) {
+                for (var t = 1; t < arguments.length; t++) {
+                    var n = arguments[t];
+                    for (var i in n) Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i])
+                }
+                return e
+            },
+            r = function() {
+                function e(e, t) {
+                    for (var n = 0; n < t.length; n++) {
+                        var i = t[n];
+                        i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
+                    }
+                }
+                return function(t, n, i) {
+                    return n && e(t.prototype, n), i && e(t, i), t
+                }
+            }(),
+            o = function(e) {
+                return e && e.__esModule ? e : {
+                    default: e
+                }
+            }(n(4));
+        var s = "previous",
+            a = "next",
+            l = t.HORIZONTAL = "horizontal",
+            u = (t.VERTICAL = "vertical", {
+                previousButton: "previousButton",
+                nextButton: "nextButton",
+                buttonDisabled: "disabled",
+                track: "track",
+                slide: "slide",
+                hidden: "hidden",
+                previous: "previous",
+                current: "current",
+                next: "next",
+                animateIn: "animateIn",
+                animateOut: "animateOut"
+            }),
+            p = 2e3,
+            c = {
+                up: "rotate(90 10 15)",
+                down: "rotate(270 10 15)",
+                left: "rotate(180 10 15)",
+                right: "rotate(0 10 15)"
+            };
+
+        function d(e) {
+            var t = e.direction,
+                n = void 0 === t ? "right" : t;
+            return o.default.createElement("svg", {
+                xmlns: "http://www.w3.org/2000/svg",
+                width: "7",
+                height: "15",
+                viewBox: "0 0 20 30"
+            }, o.default.createElement("polygon", {
+                fill: "#AAD500",
+                points: "20 15 4.228 0 0 3.626 11.954 15 0 26.374 4.228 30",
+                transform: c[n]
+            }))
+        }
+        var m = function(e) {
+            function t(e) {
+                ! function(e, t) {
+                    if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+                }(this, t);
+                var n = function(e, t) {
+                    if (!e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                    return !t || "object" != typeof t && "function" != typeof t ? e : t
+                }(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e));
+                n.setupAutoplay = function() {
+                    n.props.autoplay && !n.isMouseOver && (n.stopAutoplay(), n.autoplayTimerId = setInterval(n.next, parseInt(n.props.autoplay, 10)))
+                }, n.stopAutoplay = function() {
+                    n.autoplayTimerId && clearInterval(n.autoplayTimerId)
+                }, n.onAnimationEnd = function() {
+                    n.setState({
+                        currentSlideIndex: n.nextSlideIndex,
+                        animating: !1,
+                        animation: void 0
+                    }), n.setupAutoplay(), "function" == typeof n.props.onSlideChange && n.props.onSlideChange({
+                        slideIndex: n.nextSlideIndex
+                    })
+                }, n.isDisabled = function() {
+                    return n.slideCount < 2 || n.state.animating || n.props.disabled
+                }, n.isInfinite = function() {
+                    return n.slideCount > 4 && !1 !== n.props.infinite
+                }, n.canGoPrevious = function() {
+                    return n.isInfinite() || n.state.currentSlideIndex > 0
+                }, n.canGoNext = function() {
+                    return n.isInfinite() || n.state.currentSlideIndex < n.slideCount - 1
+                }, n.goTo = function(e, t) {
+                    if (!n.isDisabled()) {
+                        n.nextSlideIndex = e, n.setState({
+                            animating: !0,
+                            animation: t
+                        });
+                        var i = 0;
+                        n.animationTimerId = setTimeout(n.onAnimationEnd, i)
+                    }
+                }, n.previous = function() {
+                    if (n.canGoPrevious()) {
+                        var e = n.state.currentSlideIndex - 1,
+                            t = e >= 0 ? e : n.slideCount - 1;
+                        n.goTo(t, s)
+                    }
+                }, n.next = function() {
+                    if (n.canGoNext()) {
+                        var e = (n.state.currentSlideIndex + 1) % n.slideCount;
+                        n.goTo(e, a)
+                    }
+                }, n.getSlideClass = function(e) {
+                    var t = n.state,
+                        i = t.currentSlideIndex,
+                        r = t.animation,
+                        o = n.getClassNames(),
+                        l = n.slideCount - 1;
+                    return e === i ? r ? o.animateOut + " " + o[r] : o.current : 2 === n.slideCount ? r ? o.animateIn + " " + o[r] : e < i ? o.previous : o.next : e === i - 1 || 0 === i && e === l ? r === s ? o.animateIn + " " + o.previous : r === a ? o.hidden : o.previous : e === i + 1 || 0 === e && i === l ? r === a ? o.animateIn + " " + o.next : r === s ? o.hidden : o.next : o.hidden
+                }, n.isSwiping = !1, n.handleTouchStart = function(e) {
+                    if (!n.isDisabled()) {
+                        n.stopAutoplay();
+                        var t = n.getClassNames(),
+                            i = t.current,
+                            r = t.previous,
+                            o = t.next,
+                            s = e.touches[0];
+                        n.isSwiping = !0, n.pageStartPosition = s[n.swipeEventProperty], n.currentElement = n.sliderRef.getElementsByClassName(i)[0], n.previousElement = n.sliderRef.getElementsByClassName(r)[0], n.nextElement = n.sliderRef.getElementsByClassName(o)[0];
+                        var a = n.currentElement.getBoundingClientRect()[n.swipeProperty];
+                        n.currentElementStartPosition = 0, n.currentElementPosition = 0, n.currentElement.style.transition = "none", n.previousElement && (n.previousElement.style.transition = "none", n.previousElement.style.visibility = "visible", n.previousElementStartPosition = n.previousElement.getBoundingClientRect()[n.swipeProperty] - a), n.nextElement && (n.nextElement.style.visibility = "visible", n.nextElement.style.transition = "none", n.nextElementStartPosition = n.nextElement.getBoundingClientRect()[n.swipeProperty] - a)
+                    }
+                }, n.animating = !1, n.handleTouchMove = function(e) {
+                    e.preventDefault(), n.animating = n.animating || requestAnimationFrame(function() {
+                        if (n.isSwiping) {
+                            var t = e.touches[0][n.swipeEventProperty] - n.pageStartPosition;
+                            n.currentElementPosition = n.currentElementStartPosition + t, n.currentElement.style[n.swipeProperty] = n.currentElementPosition + "px", n.previousElement && (n.previousElementPosition = n.previousElementStartPosition + t, n.previousElement.style[n.swipeProperty] = n.previousElementPosition + "px"), n.nextElement && (n.nextElementPosition = n.nextElementStartPosition + t, n.nextElement.style[n.swipeProperty] = n.nextElementPosition + "px"), n.animating = !1
+                        } else n.animating = !1
+                    })
+                }, n.handleTouchEnd = function() {
+                    n.animating = !1, n.isSwiping = !1, n.currentElement.style.removeProperty(n.swipeProperty), n.currentElement.style.removeProperty("transition"), n.previousElement && (n.previousElement.style.removeProperty("visibility"), n.previousElement.style.removeProperty("transition"), n.previousElement.style.removeProperty(n.swipeProperty)), n.nextElement && (n.nextElement.style.removeProperty("visibility"), n.nextElement.style.removeProperty("transition"), n.nextElement.style.removeProperty(n.swipeProperty));
+                    var e = n.currentElementStartPosition - n.currentElementPosition,
+                        t = n.props.minSwipeOffset || 15;
+                    Math.abs(e) > t ? e < 0 ? n.previous() : n.next() : n.setupAutoplay()
+                }, n.getClassNames = function() {
+                    return i({}, u, n.props.classNames)
+                }, n.initTouchEvents = function(e) {
+                    !n.isDisabled() && e && (n.sliderRef = e, n.sliderRef.addEventListener("touchstart", n.handleTouchStart), n.sliderRef.addEventListener("touchmove", n.handleTouchMove, {
+                        passive: !1
+                    }), n.sliderRef.addEventListener("touchend", n.handleTouchEnd))
+                }, n.handleMouseOver = function() {
+                    n.isMouseOver = !0, n.stopAutoplay()
+                }, n.handleMouseOut = function() {
+                    n.isMouseOver = !1, n.setupAutoplay()
+                };
+                var r = n.props,
+                    c = r.slideIndex,
+                    d = void 0 === c ? 0 : c,
+                    m = r.direction,
+                    f = void 0 === m ? l : m;
+                return n.state = {
+                    currentSlideIndex: d,
+                    animating: !1
+                }, n.slideCount = o.default.Children.count(n.props.children), n.direction = f, n.swipeProperty = f === l ? "left" : "top", n.swipeEventProperty = f === l ? "clientX" : "clientY", n
+            }
+            return function(e, t) {
+                if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function, not " + typeof t);
+                e.prototype = Object.create(t && t.prototype, {
+                    constructor: {
+                        value: e,
+                        enumerable: !1,
+                        writable: !0,
+                        configurable: !0
+                    }
+                }), t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t)
+            }(t, o.default.PureComponent), r(t, [{
+                key: "componentDidMount",
+                value: function() {
+                    this.setupAutoplay()
+                }
+            }, {
+                key: "componentWillUnmount",
+                value: function() {
+                    this.stopAutoplay(), this.animationTimerId && clearTimeout(this.animationTimerId)
+                }
+            }, {
+                key: "componentWillReceiveProps",
+                value: function(e) {
+                    this.slideCount = o.default.Children.count(e.children), this.state.currentSlideIndex >= this.slideCount && this.setState({
+                        currentSlideIndex: 0
+                    })
+                }
+            }, {
+                key: "render",
+                value: function() {
+                    var e = this,
+                        t = this.props,
+                        n = t.children,
+                        r = t.className,
+                        s = void 0 === r ? "slider" : r,
+                        a = t.previousButton,
+                        u = void 0 === a ? o.default.createElement(d, {
+                            direction: this.direction === l ? "left" : "down"
+                        }) : a,
+                        p = t.nextButton,
+                        c = void 0 === p ? o.default.createElement(d, {
+                            direction: this.direction === l ? "right" : "up"
+                        }) : p,
+                        m = t.touchDisabled,
+                        f = t.autoplay,
+                        v = this.getClassNames(),
+                        y = this.isDisabled();
+                    return o.default.createElement("div", i({
+                        className: v.slider || s
+                    }, !m && {
+                        ref: this.initTouchEvents
+                    }, f && {
+                        onMouseOver: this.handleMouseOver,
+                        onMouseOut: this.handleMouseOut
+                    }), o.default.createElement("a", {
+                        onClick: this.previous,
+                        className: v.previousButton + (y || !this.canGoPrevious() ? " " + v.buttonDisabled : "")
+                    }, u), o.default.createElement("a", {
+                        onClick: this.next,
+                        className: v.nextButton + (y || !this.canGoNext() ? " " + v.buttonDisabled : "")
+                    }, c), o.default.createElement("div", {
+                        className: v.track
+                    }, o.default.Children.map(n, function(t, n) {
+                        return o.default.cloneElement(t, {
+                            key: n,
+                            className: [v.slide, e.getSlideClass(n), t.props.className].filter(function(e) {
+                                return e
+                            }).join(" ")
+                        })
+                    })))
+                }
+            }]), t
+        }();
+        t.default = m
+    }
+});
 
 /***/ }),
 
-/***/ "./node_modules/react-animated-slider/node_modules/react/cjs/react.development.js":
-/*!****************************************************************************************!*\
-  !*** ./node_modules/react-animated-slider/node_modules/react/cjs/react.development.js ***!
-  \****************************************************************************************/
+/***/ "./node_modules/react-animated-slider-2/node_modules/react/cjs/react.development.js":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/react-animated-slider-2/node_modules/react/cjs/react.development.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -62302,10 +62621,10 @@ module.exports = react;
 
 /***/ }),
 
-/***/ "./node_modules/react-animated-slider/node_modules/react/index.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/react-animated-slider/node_modules/react/index.js ***!
-  \************************************************************************/
+/***/ "./node_modules/react-animated-slider-2/node_modules/react/index.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/react-animated-slider-2/node_modules/react/index.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -62313,7 +62632,7 @@ module.exports = react;
 
 
 if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/react.development.js */ "./node_modules/react-animated-slider/node_modules/react/cjs/react.development.js");
+  module.exports = __webpack_require__(/*! ./cjs/react.development.js */ "./node_modules/react-animated-slider-2/node_modules/react/cjs/react.development.js");
 }
 
 
@@ -102790,16 +103109,16 @@ var Footer = function Footer() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_animated_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-animated-slider */ "./node_modules/react-animated-slider/build/index.js");
-/* harmony import */ var react_animated_slider__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_animated_slider__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_animated_slider_2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-animated-slider-2 */ "./node_modules/react-animated-slider-2/build/index.js");
+/* harmony import */ var react_animated_slider_2__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_animated_slider_2__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var normalize_css_normalize_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! normalize.css/normalize.css */ "./node_modules/normalize.css/normalize.css");
 /* harmony import */ var normalize_css_normalize_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(normalize_css_normalize_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _slider_animations_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./slider-animations.css */ "./resources/js/components/policefc/highlights/slider-animations.css");
 /* harmony import */ var _slider_animations_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_slider_animations_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles.css */ "./resources/js/components/policefc/highlights/styles.css");
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_animated_slider_build_horizontal_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-animated-slider/build/horizontal.css */ "./node_modules/react-animated-slider/build/horizontal.css");
-/* harmony import */ var react_animated_slider_build_horizontal_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_animated_slider_build_horizontal_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_animated_slider_2_build_horizontal_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-animated-slider-2/build/horizontal.css */ "./node_modules/react-animated-slider-2/build/horizontal.css");
+/* harmony import */ var react_animated_slider_2_build_horizontal_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_animated_slider_2_build_horizontal_css__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -102808,7 +103127,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AdvancedHighlight = function AdvancedHighlight(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_animated_slider__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_animated_slider_2__WEBPACK_IMPORTED_MODULE_1___default.a, {
     autoplay: 3000,
     className: "showcase"
   }, props.posts.map(function (item, index) {
@@ -102948,6 +103267,17 @@ var Highlights = function Highlights(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Highlights);
+
+/***/ }),
+
+/***/ "./resources/js/components/policefc/highlights/icons8-wide-right-arrow-64.png":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/policefc/highlights/icons8-wide-right-arrow-64.png ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/icons8-wide-right-arrow-64.png?8d31264baa3956427ac5c3443ce37544";
 
 /***/ }),
 
