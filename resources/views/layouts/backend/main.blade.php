@@ -65,5 +65,9 @@
 <!-- AdminLTE App -->
 <script src="/backend/js/app.min.js"></script>
  @yield('script')
+ <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+ <script>
+     CKEDITOR.replace( 'article-ckeditor' );
+ </script>
 </body>
 </html>

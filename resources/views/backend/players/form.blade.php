@@ -53,7 +53,7 @@
         
         <div class="form-group {{ $errors->has('bio') ? 'has-error' : '' }}">
             {!! Form::label('bio') !!}
-            {!! Form::textarea('bio', null, ['class' => 'form-control']) !!}
+            {!! Form::textarea('bio', null, ['id'=>'article-ckeditor','class' => 'form-control']) !!}
 
             @if($errors->has('bio'))
                 <span class="help-block">{{ $errors->first('bio') }}</span>
@@ -145,6 +145,8 @@
                     <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                   </div>
                 </div>
+
+                
 
                 @if($errors->has('profile_pic'))
                     <span class="help-block">{{ $errors->first('profile_pic') }}</span>

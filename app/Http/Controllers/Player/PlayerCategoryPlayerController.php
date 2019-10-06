@@ -14,11 +14,9 @@ class PlayerCategoryPlayerController extends ApiController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Player $player)
+    public function index($id)
     {
-        $categories ->$player->playerCategory;
-
-        return $this->showAll($categories);
+        
     }
 
     /**

@@ -18,7 +18,7 @@ class CreateTeamsTable extends Migration
             $table->string('logo');
             $table->string('name');
             $table->string('slogan');
-            $table->string('home_stadium');
+            $table->string('home_stadium')->nullable();
             $table->timestamps();
         });
     }

@@ -16,11 +16,10 @@ class SupportMemberSocialMediaLinksTable extends Migration
         Schema::create('support_member_social_media_links', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('support_member_id')->unsigned();
-            $table->integer('social_media_name_id')->unsigned();
+            $table->string('media_name');
             $table->string('url');
             $table->timestamps();
 
-            $table->foreign('social_media_name_id')->references('id')->on('social_media_names');
             $table->foreign('support_member_id')->references('id')->on('support_members');
         });
     }

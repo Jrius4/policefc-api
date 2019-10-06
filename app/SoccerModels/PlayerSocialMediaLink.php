@@ -10,14 +10,11 @@ class PlayerSocialMediaLink extends Model
 {
     protected $fillable = [
         'player_id',
-        'social_media_name_id',
+        'media_name',
         'url'
     ];
 
     public function player(){
         return $this->belongsTo(Player::class);
-    }
-    public function socialMediaName(){
-        return $this->belongsTo(SocialMediaName::class);
     }
 }

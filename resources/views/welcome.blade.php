@@ -13,7 +13,7 @@
     <link href="assets/css/theme.css" rel="stylesheet"/>
 
 </head>
-<body>
+<body class="tm-isblog">
 <div id='root'></div>
 
 

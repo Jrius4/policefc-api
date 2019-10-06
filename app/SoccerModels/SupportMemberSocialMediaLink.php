@@ -10,13 +10,11 @@ class SupportMemberSocialMediaLink extends Model
 {
     protected $fillable = [
         'support_member_id',
-        'social_media_name_id',
+        'media_name',
         'url'
     ];
 
-    public function supportMember(){
-        return $this->belongsTo(SupportMember::class);
-    }
+    
     public function socialMediaName(){
         return $this->belongsTo(SocialMediaName::class);
     }

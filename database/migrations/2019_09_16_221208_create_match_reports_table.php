@@ -18,10 +18,10 @@ class CreateMatchReportsTable extends Migration
             $table->string('image');
             $table->string('title');
             $table->string('body',1000);
-            $table->unsignedBigInteger('match_reports_match_id');
+            $table->unsignedBigInteger('match_id');
             $table->timestamps();
 
-            $table->foreign('match_reports_match_id')->references('id')->on('matches');
+            $table->foreign('match_id')->references('id')->on('matches');
         });
     }
 

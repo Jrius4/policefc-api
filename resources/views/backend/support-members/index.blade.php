@@ -8,8 +8,8 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-            {{$supportMembersCounter->count()}} Players
-          <small>Display All Police F.C players</small>
+            {{$supportMembersCounter->count()}} Support Members
+          <small>Display All Police F.C Executive & Technical Members</small>
         </h1>
         <ol class="breadcrumb">
           <li>

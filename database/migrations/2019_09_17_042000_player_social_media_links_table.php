@@ -16,11 +16,10 @@ class PlayerSocialMediaLinksTable extends Migration
         Schema::create('player_social_media_links', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('player_id')->unsigned();
-            $table->integer('social_media_name_id')->unsigned();
+            $table->string('media_name');
             $table->string('url');
             $table->timestamps();
 
-            $table->foreign('social_media_name_id')->references('id')->on('social_media_names');
             $table->foreign('player_id')->references('id')->on('players');
         });
     }

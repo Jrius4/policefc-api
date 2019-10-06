@@ -17,11 +17,4 @@ class SocialMediaName extends Model
         'name',
     ];
 
-    public function playerSocialMediaLink(){
-        return $this->hasMany(PlayerSocialMediaLink::class);
-    }
-
-    public function supportMemberSocialMediaLink(){
-        return $this->hasMany(SupportMemberSocialMediaLink::class);
-    }
 }

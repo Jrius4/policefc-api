@@ -18,8 +18,11 @@ class CreateMatchesTable extends Migration
             $table->string('date');
             $table->string('venue');
             $table->string('home_team_score')->nullable();
-            $table->string('away_team_score')->nullable();;
+            $table->string('away_team_score')->nullable();
+            $table->unsignedBigInteger('home_team_id');
+            $table->unsignedBigInteger('away_team_id');
             $table->timestamps();
+
 
         });
     }

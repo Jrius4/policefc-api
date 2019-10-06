@@ -5,12 +5,20 @@ namespace App\Http\Controllers\Backend\SupportMember;
 use App\SoccerModels\SupportMember;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
+
 
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class SupportMemberController extends Controller
 {
+    protected $uploadPath;
+
+    public function __construct()
+    {
+        $this->uploadPath = public_path(config('cms.support-team-images.directory'));
+    }
     /**
      * Display a listing of the resource.
      *
@@ -43,7 +51,20 @@ class SupportMemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'profile_pic'=>'required',
+            'firstname'=>'required',
+            'lastname'=>'required',
+            'support_member_position_id'=>'required',
+            'is_executive'=>'required',
+            'bio'=>'required',
+        ];
+        
+        $this->validate($request,$rules);
+        $data = $this->handleRequest($request);
+        $member = SupportMember::create($data);
+
+        return redirect("/backend/support-members")->with("message", "New support member was update successfully!");
     }
 
     /**
@@ -65,7 +86,7 @@ class SupportMemberController extends Controller
      */
     public function edit(SupportMember $supportMember)
     {
-        //
+        return view("backend.support-members.edit",compact('supportMember'));
     }
 
     /**
@@ -75,9 +96,18 @@ class SupportMemberController extends Controller
      * @param  \App\SoccerModels\SupportMember  $supportMember
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SupportMember $supportMember)
+    public function update(Request $request,$id)
     {
-        //
+        $member     = SupportMember::findOrFail($id);
+        $oldImage = $member->profile_pic;
+        $data     = $this->handleRequest($request);
+
+        $member->update($data);
+
+        if ($oldImage !== $member->profile_pic) {
+            $this->removeImage($oldImage);
+        }
+        return redirect('/backend/support-members')->with('message', 'member was updated successfully!');
     }
 
     /**
@@ -88,7 +118,41 @@ class SupportMemberController extends Controller
      */
     public function destroy(SupportMember $supportMember)
     {
-        //
+        $supportMember->delete();
+
+        $this->removeImage($supportMember->profile_pic);
+
+        return redirect('/backend/support-members')->with('message', 'Your post has been deleted successfully');
+    }
+
+    private function handleRequest($request)
+    {
+        $data = $request->all();
+
+        if ($request->hasFile('profile_pic'))
+        {
+            $image       = $request->file('profile_pic');
+            $fileName    = $image->getClientOriginalName();
+            $destination = $this->uploadPath;
+
+            $successUploaded = $image->move($destination, $fileName);
+
+            if ($successUploaded)
+            {
+                $width     = config('cms.support-team-images.thumbnail.width');
+                $height    = config('cms.support-team-images.thumbnail.height');
+                $extension = $image->getClientOriginalExtension();
+                $thumbnail = str_replace(".{$extension}", "_thumb.{$extension}", $fileName);
+
+                Image::make($destination . '/' . $fileName)
+                    ->resize($width, $height)
+                    ->save($destination . '/' . $thumbnail);
+            }
+
+            $data['profile_pic'] = $fileName;
+        }
+
+        return $data;
     }
 
     protected function paginate(Collection $collection)

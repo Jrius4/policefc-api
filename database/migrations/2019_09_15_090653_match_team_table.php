@@ -16,10 +16,6 @@ class MatchTeamTable extends Migration
         Schema::create('match_team', function (Blueprint $table) {
             $table->bigInteger('match_id')->unsigned();
             $table->bigInteger('team_id')->unsigned();
-
-
-            $table->foreign('match_id')->references('id')->on('matches');
-            $table->foreign('team_id')->references('id')->on('teams');
         });
     }
 

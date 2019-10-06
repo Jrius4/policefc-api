@@ -82,10 +82,10 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{ route('backend.blog.index') }}"><i class="fa fa-circle-o"></i>View Products</a></li>
-              <li><a href="{{ route('backend.categories.index') }}"><i class="fa fa-circle-o"></i>Shops</a></li>
-              <li><a href="{{ route('backend.blog.create') }}"><i class="fa fa-circle-o"></i>Product Category</a></li>
-              <li><a href="{{ route('backend.blog.create') }}"><i class="fa fa-circle-o"></i>Add New Product</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>View Products</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>Shops</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>Product Category</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>Add New Product</a></li>
             </ul>
       </li>
       <li class="treeview">
@@ -97,9 +97,9 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{ route('backend.blog.index') }}"><i class="fa fa-circle-o"></i>View Eras</a></li>
-              <li><a href="{{ route('backend.blog.create') }}"><i class="fa fa-circle-o"></i>Era Category</a></li>
-              <li><a href="{{ route('backend.blog.create') }}"><i class="fa fa-circle-o"></i>Add New Era</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>View Eras</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>Era Category</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>Add New Era</a></li>
             </ul>
       </li>
       <li class="treeview">
@@ -111,9 +111,9 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{ route('backend.blog.index') }}"><i class="fa fa-circle-o"></i>View Videos</a></li>
-              <li><a href="{{ route('backend.blog.create') }}"><i class="fa fa-circle-o"></i>Video Category</a></li>
-              <li><a href="{{ route('backend.blog.create') }}"><i class="fa fa-circle-o"></i>Add New Video</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>View Videos</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>Video Category</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>Add New Video</a></li>
             </ul>
       </li>
       <li class="treeview">
@@ -125,8 +125,8 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{ route('backend.blog.index') }}"><i class="fa fa-circle-o"></i>View Teams</a></li>
-              <li><a href="{{ route('backend.blog.create') }}"><i class="fa fa-circle-o"></i>Add New Team</a></li>
+              <li><a href="{{ route('backend.teams.index') }}"><i class="fa fa-circle-o"></i>View Teams</a></li>
+              <li><a href="{{ route('backend.teams.create') }}"><i class="fa fa-circle-o"></i>Add New Team</a></li>
             </ul>
       </li>
       <li class="treeview">
@@ -138,9 +138,9 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{ route('backend.blog.index') }}"><i class="fa fa-circle-o"></i>View Matches</a></li>
-              <li><a href="{{ route('backend.blog.index') }}"><i class="fa fa-circle-o"></i>Manage Matches Reports</a></li>
-              <li><a href="{{ route('backend.blog.create') }}"><i class="fa fa-circle-o"></i>Add New Match</a></li>
+              <li><a href="{{ route('backend.matches.index') }}"><i class="fa fa-circle-o"></i>View Matches</a></li>
+              <li><a href="{{ route('backend.match-reports.index') }}"><i class="fa fa-circle-o"></i>Manage Matches Reports</a></li>
+              <li><a href="{{ route('backend.matches.create') }}"><i class="fa fa-circle-o"></i>Add New Match</a></li>
             </ul>
       </li>
       <li class="treeview">
@@ -152,9 +152,9 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{ route('backend.blog.index') }}"><i class="fa fa-circle-o"></i>View Achievements</a></li>
-              <li><a href="{{ route('backend.blog.index') }}"><i class="fa fa-circle-o"></i>Achievements Categories</a></li>
-              <li><a href="{{ route('backend.blog.create') }}"><i class="fa fa-circle-o"></i>Add New Achievement</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>View Achievements</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>Achievements Categories</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>Add New Achievement</a></li>
             </ul>
       </li>
       <li class="treeview">
@@ -166,12 +166,12 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{ route('backend.blog.index') }}"><i class="fa fa-circle-o"></i>View Fames</a></li>
-              <li><a href="{{ route('backend.blog.index') }}"><i class="fa fa-circle-o"></i>Fame Categories</a></li>
-              <li><a href="{{ route('backend.blog.create') }}"><i class="fa fa-circle-o"></i>Add New Fame</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>View Fames</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>Fame Categories</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>Add New Fame</a></li>
             </ul>
       </li>
-      <li><a href="{{ route('backend.users.index') }}"><i class="fa fa-users"></i> <span>Social Media Names</span></a></li>
+      <li><a href="#"><i class="fa fa-users"></i> <span>Social Media Names</span></a></li>
     </ul>
   </section>
   <!-- /.sidebar -->

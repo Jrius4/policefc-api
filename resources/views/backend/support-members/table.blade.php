@@ -2,9 +2,9 @@
     <thead>
         <tr>
             <td width="80">Action</td>
-            <td>Picture</td>
-            <td>First Name</td>
-            <td width="120">Last Name</td>
+            <td width="250">Picture</td>
+            <td width="100">First Name</td>
+            <td width="100">Last Name</td>
             <td width="120">Position</td>
             <td width="80">Section</td>
         </tr>

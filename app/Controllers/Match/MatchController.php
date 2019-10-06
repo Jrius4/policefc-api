@@ -16,8 +16,8 @@ class MatchController extends ApiController
      */
     public function index()
     {
-        $matches = Match::get();
-        return $this->showAll($matches);
+        $matches = Match::with('teams','matchReport')->orderBy('updated_at','desc')->get();
+        return response()->json($matches,200);
     }
 
     /**

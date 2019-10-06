@@ -5,6 +5,8 @@ namespace App\Traits;
 use fractal;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 
 /**
  * 
@@ -13,6 +15,7 @@ trait ApiResponser
 {
     private function successResponse($data,$code)
     {
+        
         return response()->json($data,$code);
     }
 
@@ -24,6 +27,7 @@ trait ApiResponser
 
     protected function showAll(Collection $collection,$code=200)
     {
+        $collection=$this->paginate($collection);
         if ($collection->isEmpty()) {
             return $this->successResponse(['data'=>$collection],$code);
         }
@@ -43,5 +47,19 @@ trait ApiResponser
     {
         $transformation = fractal($data,new $transformer);
         return $transformation->toArray();
+    }
+
+    protected function paginate(Collection $collection)
+    {
+        $page=LengthAwarePaginator::resolveCurrentPage();
+        $perPage = 5;
+        $results=$collection->slice(($page-1)* $perPage,$perPage)->values();
+        $paginated= new LengthAwarePaginator($results,$collection->count(),$perPage,$page,[
+            'path'=> LengthAwarePaginator::resolveCurrentPath(),
+        ]);
+
+        $paginated->appends(request()->all());
+
+        return $paginated;
     }
 }

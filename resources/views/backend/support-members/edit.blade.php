@@ -8,29 +8,29 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Players
-          <small>Edit Player</small>
+          Support Members
+          <small>Edit Member</small>
         </h1>
         <ol class="breadcrumb">
           <li>
               <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
           </li>
-          <li><a href="{{ route('backend.players.index') }}">Players</a></li>
-          <li class="active">Edit Player</li>
+          <li><a href="{{ route('backend.support-members.index') }}">Members</a></li>
+          <li class="active">Edit Member</li>
         </ol>
       </section>
 
       <!-- Main content -->
       <section class="content">
           <div class="row">
-              {!! Form::model($player, [
+              {!! Form::model($supportMember, [
                   'method' => 'PUT',
-                  'route'  => ['backend.players.update', $player->id],
+                  'route'  => ['backend.support-members.update', $supportMember->id],
                   'files'  => TRUE,
                   'id' => 'post-form'
               ]) !!}
 
-              @include('backend.players.form')
+              @include('backend.support-members.form')
 
             {!! Form::close() !!}
           </div>
@@ -41,4 +41,4 @@
 
 @endsection
 
-@include('backend.players.script')
+@include('backend.support-members.script')

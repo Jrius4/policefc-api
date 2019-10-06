@@ -173,6 +173,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Spatie\Fractal\FractalServiceProvider::class,
+        Unisharp\Ckeditor\ServiceProvider::class,
 
 
         /*

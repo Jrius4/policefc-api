@@ -18,7 +18,7 @@ class PlayerTransformer extends TransformerAbstract
             'indentifier'=>(int)$player->id,
             'firstname'=>(string)$player->first_name,
             'lastname'=>(string)$player->last_name,
-            'picture'=>url("img/{$player->profile_pic}"),
+            'picture'=>url("img/players/{$player->profile_pic}"),
             'position'=>(int)$player->player_position_id,
             'foot'=>(int)$player->strong_foot_id,
             'section'=>(int)$player->player_category_id,

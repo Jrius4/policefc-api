@@ -2,20 +2,20 @@
   <div class="box">
     <div class="box-body ">
 
-        <div class="form-group {{ $errors->has('first_name') ? 'has-error' : '' }}">
-            {!! Form::label('first_name') !!}
-            {!! Form::text('first_name', null, ['class' => 'form-control']) !!}
+        <div class="form-group {{ $errors->has('firstname') ? 'has-error' : '' }}">
+            {!! Form::label('firstname') !!}
+            {!! Form::text('firstname', null, ['class' => 'form-control']) !!}
 
-            @if($errors->has('first_name'))
-                <span class="help-block">{{ $errors->first('first_name') }}</span>
+            @if($errors->has('firstname'))
+                <span class="help-block">{{ $errors->first('firstname') }}</span>
             @endif
         </div>
-        <div class="form-group {{ $errors->has('last_name') ? 'has-error' : '' }}">
-            {!! Form::label('last_name') !!}
-            {!! Form::text('last_name', null, ['class' => 'form-control']) !!}
+        <div class="form-group {{ $errors->has('lastname') ? 'has-error' : '' }}">
+            {!! Form::label('lastname') !!}
+            {!! Form::text('lastname', null, ['class' => 'form-control']) !!}
 
-            @if($errors->has('last_name'))
-                <span class="help-block">{{ $errors->first('last_name') }}</span>
+            @if($errors->has('lastname'))
+                <span class="help-block">{{ $errors->first('lastname') }}</span>
             @endif
         </div>
        
@@ -23,7 +23,7 @@
         
         <div class="form-group {{ $errors->has('bio') ? 'has-error' : '' }}">
             {!! Form::label('bio') !!}
-            {!! Form::textarea('bio', null, ['class' => 'form-control']) !!}
+            {!! Form::textarea('bio', null, ['id'=>'article-ckeditor','class' => 'form-control']) !!}
 
             @if($errors->has('bio'))
                 <span class="help-block">{{ $errors->first('bio') }}</span>

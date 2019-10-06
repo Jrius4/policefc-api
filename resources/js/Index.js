@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Layout from './components/container/Layout';
 import { Provider } from 'react-redux';
 import store from './store';
+import './assets/styles/custom.css'
 
 
 export default class Index extends Component {

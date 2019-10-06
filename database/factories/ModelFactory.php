@@ -104,8 +104,8 @@ $factory->define(SupportMember::class, function (Faker $faker) {
 $factory->define(SupportMemberSocialMediaLink::class, function (Faker $faker) {
     return [
         'support_member_id' => $faker->numberBetween(1,5),
-        'social_media_name_id' => $faker->numberBetween(1,4),
         'url' => $faker->name.'.'.$faker->randomElement(['facebook.com','linkedin.com','twitter.com']),
+        'media_name'=>$faker->randomElement([SocialMediaName::FACEBOOK,SocialMediaName::LINKEDIN,SocialMediaName::TWITTER]),
     ];
 });
 
@@ -145,7 +145,7 @@ $factory->define(Player::class, function (Faker $faker) {
 $factory->define(PlayerSocialMediaLink::class, function (Faker $faker) {
     return [
         'player_id' => $faker->numberBetween(1,10),
-        'social_media_name_id' => $faker->numberBetween(1,4),
+        'media_name' => $faker->randomElement([SocialMediaName::FACEBOOK,SocialMediaName::LINKEDIN,SocialMediaName::TWITTER]),
         'url' => $faker->name.'.'.$faker->randomElement(['facebook.com','linkedin.com','twitter.com']),
     ];
 });
@@ -165,9 +165,11 @@ $factory->define(Match::class, function (Faker $faker) {
 
   
         return [
-            'date' => $faker->sentence,
+            'date' => $faker->date,
             'home_team_score' => $faker->numberBetween(1,6),
             'away_team_score' => $faker->numberBetween(1,6),
+            'home_team_id' => $faker->numberBetween(1,3),
+            'away_team_id' => $faker->numberBetween(4,6),
             'venue' => $faker->randomElement(['Kisugi','Nambole']),
         ];
 
@@ -179,7 +181,7 @@ $factory->define(MatchReport::class,function(Faker $faker){
         'image'=> $faker->randomElement(['trainer-img1.jpg','trainer-img.jpg','trainer-img2.jpg']),
         'title'=> $faker->sentence,
         'body'=> $faker->paragraph(2),
-        'match_reports_match_id'=> $faker->numberBetween(1,10),
+        'match_id'=> $faker->numberBetween(1,10),
     ];
 });
 

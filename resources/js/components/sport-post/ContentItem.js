@@ -1,6 +1,7 @@
 import React from 'react'
 import isEmpty from "../../validation/is-empty";
 import {Link} from 'react-router-dom';
+import Parser from 'html-react-parser';
 
 
 const ContentItem = (props) => {
@@ -31,7 +32,7 @@ const ContentItem = (props) => {
         }
         
         <div className="text-left p-2">
-            {props.body}
+            { Parser(props.body) }
         </div>
     </div>
   )

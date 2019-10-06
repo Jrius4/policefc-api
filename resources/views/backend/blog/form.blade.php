@@ -24,7 +24,7 @@
         </div>
         <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
             {!! Form::label('body') !!}
-            {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
+            {!! Form::textarea('body', null, ['id'=>'article-ckeditor','class' => 'form-control']) !!}
 
             @if($errors->has('body'))
                 <span class="help-block">{{ $errors->first('body') }}</span>

@@ -6,6 +6,8 @@ use App\PlayerCategory;
 use App\SoccerModels\Player;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 use App\Http\Controllers\Api\ApiController;
 
 class PlayerController extends ApiController
@@ -17,8 +19,9 @@ class PlayerController extends ApiController
      */
     public function index()
     {
-        $players=  Player::all();
-        return $this->showAll($players);
+        $players=  Player::with('playerFoot','playerPosition','playerCategory','playerSocialMediaLinks')->get();
+        $players=$this->paginate($players);
+        return response()->json($players,200);
     }
 
     public function indexCategory()
@@ -101,5 +104,19 @@ class PlayerController extends ApiController
     public function destroy($id)
     {
         //
+    }
+
+    protected function paginate(Collection $collection)
+    {
+        $page=LengthAwarePaginator::resolveCurrentPage();
+        $perPage = 10;
+        $results=$collection->slice(($page-1)* $perPage,$perPage)->values();
+        $paginated= new LengthAwarePaginator($results,$collection->count(),$perPage,$page,[
+            'path'=> LengthAwarePaginator::resolveCurrentPath(),
+        ]);
+
+        $paginated->appends(request()->all());
+
+        return $paginated;
     }
 }

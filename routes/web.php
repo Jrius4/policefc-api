@@ -143,6 +143,30 @@ Route::resource('/backend/eras', 'Backend\Era\EraController',['as' =>'backend'])
 //wall of fame
 Route::resource('/backend/wall-of-fames/wall-of-fame-categories', 'Backend\WallOfFame\WallOfFameCategoryController',['as' =>'backend']);
 Route::resource('/backend/wall-of-fames', 'Backend\WallOfFame\WallOfFameController',['as' =>'backend']);
+Route::get('/routes', function() {
+    $routeCollection = Route::getRoutes();
+
+    echo "<table style='width:100%'>";
+        echo "<tr>";
+            echo "<td width='10%'><h4>HTTP Method</h4></td>";
+            echo "<td width='10%'><h4>Route</h4></td>";
+            echo "<td width='10%'><h4>Name</h4></td>";
+            echo "<td width='70%'><h4>Corresponding Action</h4></td>";
+        echo "</tr>";
+        foreach ($routeCollection as $value) {
+            echo "<tr>";
+            echo "<td>" . $value->methods()[0] . "</td>";
+            echo "<td>" . $value->uri() . "</td>";
+            echo "<td>" . $value->getName() . "</td>";
+            echo "<td>" . $value->getActionName() . "</td>";
+            echo "</tr>";
+        }
+    echo "</table>";
+});
+
+Route::get('/policefc-admin',function(){
+   return redirect('/login');
+});
 
 
 

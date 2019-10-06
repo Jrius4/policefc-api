@@ -1,6 +1,6 @@
 @extends('layouts.backend.main')
 
-@section('title', 'Police F.C | Add new player')
+@section('title', 'Police F.C | Add new Team')
 
 @section('content')
 

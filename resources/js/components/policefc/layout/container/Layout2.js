@@ -12,8 +12,9 @@ import TeamHomepage from '../../team-homepage/TeamHomepage'
 import LatestVideoHome from '../../latest-video-home/LatestVideoHome'
 import Footer from '../../footer/Footer'
 
-const Layout2 = () => {
-  return (
+class Layout2 extends React.Component{
+  render(){
+    return (
     <div>
       
             <Highlights/>
@@ -26,7 +27,7 @@ const Layout2 = () => {
      
       
     </div>
-  )
+  )}
 }
 
 export default Layout2

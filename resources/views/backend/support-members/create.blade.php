@@ -15,7 +15,7 @@
           <li>
               <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
           </li>
-          <li><a href="{{ route('backend.players.index') }}">Players</a></li>
+          <li><a href="{{ route('backend.support-members.index') }}">Support Members</a></li>
           <li class="active">Add new</li>
         </ol>
       </section>

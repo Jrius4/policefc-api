@@ -14,8 +14,15 @@ return [
             'height' => 150
         ]
     ],
+    'teams'=>[
+        'directory' => 'img/teams/',
+        'thumbnail' => [
+            'width' => 150,
+            'height' => 150
+        ]
+    ],
     'support-team-images'=>[
-        'directory' => 'img/players/',
+        'directory' => 'img/support-members/',
         'thumbnail' => [
             'width' => 150,
             'height' => 150

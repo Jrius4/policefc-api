@@ -30,6 +30,8 @@ Players
 Route::resource('/players','Player\PlayerController',['only'=>['index','show','store']]);
 Route::get('/player-categories','Player\PlayerController@indexCategory');
 Route::resource('/players.categories','Player\PlayerCategoryPlayerController',['only'=>['index']]);
+Route::resource('/player-position.players','Player\PlayerPositionPlayerController',['only'=>['index','show']]);
+Route::resource('/player-positions','Player\PlayerPositionController',['only'=>['index','show']]);
 
 /*
 Support Members
@@ -64,3 +66,7 @@ Route::resource('/sport-posts','ApiPostController',['only'=>['index','show']]);
 // Route::resource('/sport-posts.comments','Post\PostCommentController',['only'=>['index','show','store']]);
 Route::resource('/sport-posts.comments','Post\PostCommentController',['only'=>['index','store']]);
 // Route::post('/sport-posts/{sport-posts}/comments','CommentsController@store');
+Route::get('/home-teams',function(){
+$homeTeams = App\SoccerModels\HomeTeam::all();
+return response()->json($homeTeams,200);
+});

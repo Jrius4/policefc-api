@@ -4,6 +4,7 @@ namespace App\SoccerModels;
 
 use App\MatchReport;
 use App\SoccerModels\Team;
+use App\SoccerModels\HomeTeam;
 use Illuminate\Database\Eloquent\Model;
 
 class Match extends Model
@@ -13,6 +14,8 @@ class Match extends Model
         'venue',
         'home_team_score',
         'away_team_score',
+        'home_team_id',
+        'away_team_id',
     ];
 
     public function teams()
@@ -20,8 +23,13 @@ class Match extends Model
         return $this->belongsToMany(Team::class);
     }
 
+    public function homeTeams()
+    {
+        return $this->belongsToMany(HomeTeam::class);
+    }
+
     public function matchReport()
     {
-        return $this->has(MatchReport::class);
+        return $this->hasOne(MatchReport::class);
     }
 }

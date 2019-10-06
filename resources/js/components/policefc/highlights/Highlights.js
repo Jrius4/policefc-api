@@ -3,7 +3,28 @@ import slider from '../images/main-slider-img.jpg';
 import slider1 from '../images/main-slider-img1.jpg';
 import slider2 from '../images/main-slider-img2.jpg';
 
-const Highlights = () => {
+const Highlights = (props) => {
+    let itemContent;
+    if(props.posts!==null)
+    {
+        itemContent = props.posts.map((item,index)=>(
+            <li key={index} aria-hidden="true" className="uk-height-viewport">
+                <div style={{backgroundImage: item.image !==null?`url(/img/${item.image})`:`linear-gradient(90deg, rgba(2,0,36,1) 10%, rgba(9,9,121,1) 63%, rgba(1,18,22,1) 100%)`}} className="uk-cover-background uk-position-cover"></div>
+                {item.image!==null?<img style={{width: '100%', height: 'auto', opacity: 0}} className="uk-invisible" src={`/img/${item.image}`} alt=""/>:<div style={{width: '100%', height: 'auto', opacity: 0}}></div>}
+                <div className="uk-position-cover uk-flex-middle">
+                    <div className="uk-container uk-container-center uk-position-cover">
+                        <div className="va-promo-text uk-width-6-10 uk-push-4-10">
+                            <h3>{item.title}</h3>
+                            <div className="promo-sub">{item.excerpt}</div>
+                            <a href="#" className="read-more">Read More<i className="uk-icon-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        ))
+    }
+
+
   return (
 <div className="tm-top-a-box tm-full-width  ">
     <div className="uk-container uk-container-center">
@@ -14,42 +35,7 @@ const Highlights = () => {
                     <div className="akslider-module ">
                         <div className="uk-slidenav-position" data-uk-slideshow="{height: 'auto', animation: 'swipe', duration: '500', autoplay: true, autoplayInterval: '7000', videoautoplay: true, videomute: true, kenburns: false}">
                             <ul className="uk-slideshow uk-overlay-active">
-                                <li aria-hidden="false" className="uk-height-viewport uk-active">
-                                    <div style={{backgroundImage: `url(${slider})`}} className="uk-cover-background uk-position-cover"></div><img style={{width: '100%', height: 'auto', opacity: 0}} className="uk-invisible" src="images/main-slider-img.jpg" alt=""/>
-                                    <div className="uk-position-cover uk-flex-middle">
-                                        <div className="uk-container uk-container-center uk-position-cover">
-                                            <div className="va-promo-text uk-width-6-10 uk-push-4-10">
-                                                <h3>Play to <span>serve</span></h3>
-                                                <div className="promo-sub">Just play. <span>Have fun.</span> Enjoy the game</div>
-                                                <a href="#" className="read-more">Read More<i className="uk-icon-chevron-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li aria-hidden="true" className="uk-height-viewport">
-                                    <div style={{backgroundImage: `url(${slider2})`}} className="uk-cover-background uk-position-cover"></div><img style={{width: '100%', height: 'auto', opacity: 0}} className="uk-invisible" src={slider1} alt=""/>
-                                    <div className="uk-position-cover uk-flex-middle">
-                                        <div className="uk-container uk-container-center uk-position-cover">
-                                            <div className="va-promo-text uk-width-6-10 uk-push-4-10">
-                                                <h3>Play to <span>serve</span></h3>
-                                                <div className="promo-sub">Play to <span>serve</span> Enjoy the game</div>
-                                                <a href="#" className="read-more">Read More<i className="uk-icon-chevron-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li aria-hidden="true" className="uk-height-viewport">
-                                    <div style={{backgroundImage: `url(${slider1})`}} className="uk-cover-background uk-position-cover"></div><img style={{width: '100%', height: 'auto', opacity: 0}} className="uk-invisible" src={slider1} alt=""/>
-                                    <div className="uk-position-cover uk-flex-middle">
-                                        <div className="uk-container uk-container-center uk-position-cover">
-                                            <div className="va-promo-text uk-width-6-10 uk-push-4-10">
-                                                <h3>Play to <span>serve</span></h3>
-                                                <div className="promo-sub">Just play. <span>Have fun.</span> Enjoy the game</div>
-                                                <a href="#" className="read-more">Read More<i className="uk-icon-chevron-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                                    {itemContent}
                             </ul>
                             <a href="../index.html" className="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
                             <a href="../index.html" className="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
