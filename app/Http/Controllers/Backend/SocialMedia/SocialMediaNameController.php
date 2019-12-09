@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Backend\SocialMedia;
 
-use App\SoccerModels\SocialMediaName;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\SoccerModels\SocialMediaName;
+use App\Http\Controllers\Backend\BackendController;
 
-class SocialMediaNameController extends Controller
+class SocialMediaNameController extends BackendController
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,8 @@ class SocialMediaNameController extends Controller
      */
     public function index()
     {
-        //
+        $social_names = SocialMediaName::simplepaginate(8);
+        return view('backend.social-media-names.index',compact('social_names'));
     }
 
     /**
@@ -23,9 +24,9 @@ class SocialMediaNameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(SocialMediaName $socialMediaName)
     {
-        //
+        return view('backend.social-media-names.create',compact('socialMediaName'));
     }
 
     /**
@@ -36,7 +37,12 @@ class SocialMediaNameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'name'=>'required',
+        ];
+        $data= $this->validate($request,$rules);
+        SocialMediaName::create($data);
+        return redirect('/backend/social-media-names')->with("message", "New media name was created successfully!");
     }
 
     /**
@@ -58,7 +64,7 @@ class SocialMediaNameController extends Controller
      */
     public function edit(SocialMediaName $socialMediaName)
     {
-        //
+        return view('backend.social-media-names.edit',compact('socialMediaName'));
     }
 
     /**
@@ -70,7 +76,12 @@ class SocialMediaNameController extends Controller
      */
     public function update(Request $request, SocialMediaName $socialMediaName)
     {
-        //
+        $rules = [
+            'name'=>'required',
+        ];
+        $data= $this->validate($request,$rules);
+        $socialMediaName->update($data);
+        return redirect('/backend/social-media-names')->with("message", "New media name was update successfully!");
     }
 
     /**

@@ -20,10 +20,11 @@ class SupportMembersTable extends Migration
             $table->integer('support_member_position_id')->unsigned();
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('bio',1000);
+            $table->string('slug');
+            $table->text('bio');
             $table->string('is_executive')->default(SupportMember::TECHNICAL_Member);
             $table->timestamps();
-            
+
             $table->foreign('support_member_position_id')->references('id')->on('support_member_positions');
         });
     }

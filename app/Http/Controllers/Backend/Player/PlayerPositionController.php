@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Backend\Player;
 
-use App\SoccerModels\PlayerPosition;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
 use Illuminate\Support\Collection;
+
+use App\SoccerModels\PlayerPosition;
 use Illuminate\Pagination\LengthAwarePaginator;
-class PlayerPositionController extends Controller
+use App\Http\Controllers\Backend\BackendController;
+
+class PlayerPositionController extends BackendController
 {
     /**
      * Display a listing of the resource.
@@ -71,7 +72,7 @@ class PlayerPositionController extends Controller
      */
     public function edit(PlayerPosition $playerPosition)
     {
-        return view("backend.player-positions.edit",compact('playerPosition'));        
+        return view("backend.player-positions.edit",compact('playerPosition'));
     }
 
     /**

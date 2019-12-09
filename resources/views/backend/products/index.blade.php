@@ -1,6 +1,6 @@
 @extends('layouts.backend.main')
 
-@section('title', 'MyBlog | Categories')
+@section('title', 'Police F.C | Product Index')
 
 @section('content')
 

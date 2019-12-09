@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Backend\SupportMember;
 
-use App\SoccerModels\SupportMemberPosition;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
 use Illuminate\Support\Collection;
+
+use App\SoccerModels\SupportMemberPosition;
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\Http\Controllers\Backend\BackendController;
 
 
-class SupportMemberPositionController extends Controller
+class SupportMemberPositionController extends BackendController
 {
     /**
      * Display a listing of the resource.
@@ -33,7 +33,7 @@ class SupportMemberPositionController extends Controller
      */
     public function create(SupportMemberPosition $supportMemberPosition)
     {
-        return view("backend.support-member-positions.create",compact('supportMemberPosition'));        
+        return view("backend.support-member-positions.create",compact('supportMemberPosition'));
     }
 
     /**
@@ -63,7 +63,7 @@ class SupportMemberPositionController extends Controller
      */
     public function show(SupportMemberPosition $supportMemberPosition)
     {
-        return view("backend.support-member-positions.edit",compact('supportMemberPosition'));         
+        return view("backend.support-member-positions.edit",compact('supportMemberPosition'));
     }
 
     /**
@@ -74,7 +74,7 @@ class SupportMemberPositionController extends Controller
      */
     public function edit(SupportMemberPosition $supportMemberPosition)
     {
-        return view("backend.support-member-positions.edit",compact('supportMemberPosition'));  
+        return view("backend.support-member-positions.edit",compact('supportMemberPosition'));
     }
 
     /**

@@ -14,8 +14,9 @@ use App\Http\Controllers\Controller;
 
 use Intervention\Image\Facades\Image;
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\Http\Controllers\Backend\BackendController;
 
-class MatchController extends Controller
+class MatchController extends BackendController
 {
     /**
      * Display a listing of the resource.
@@ -25,13 +26,13 @@ class MatchController extends Controller
     public function index()
     {
         $matchCounter = Match::all();
-        $matches = Match::orderBy('updated_at','desc')->get();
+        $matches = Match::orderBy('date','asc')->get();
         $matches = $this->paginate($matches);
         $matchCount = $matches->count();
 
         $team= Team::all();
-        
-        return view("backend.matches.index",compact('matches','matchCount','matchCounter','team')); 
+
+        return view("backend.matches.index",compact('matches','matchCount','matchCounter','team'));
     }
 
     /**
@@ -41,7 +42,7 @@ class MatchController extends Controller
      */
     public function create(Match $match)
     {
-        return view("backend.matches.create",compact('match')); 
+        return view("backend.matches.create",compact('match'));
     }
 
     /**
@@ -144,7 +145,7 @@ class MatchController extends Controller
     {
         $match->delete();
         return redirect('/backend/matches')->with('message', 'Match was deleted successfully!');
-        
+
     }
 
     protected function paginate(Collection $collection)

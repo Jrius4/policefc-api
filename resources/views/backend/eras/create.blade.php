@@ -1,6 +1,6 @@
 @extends('layouts.backend.main')
 
-@section('title', 'MyBlog | Add new category')
+@section('title', 'Police F.C Eras | Add new era')
 
 @section('content')
 
@@ -8,29 +8,29 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Categories
-          <small>Add new category</small>
+          Eras
+          <small>Add new era</small>
         </h1>
         <ol class="breadcrumb">
           <li>
               <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
           </li>
-          <li><a href="{{ route('backend.categories.index') }}">Categories</a></li>
-          <li class="active">Add new</li>
+          <li><a href="{{ route('backend.backend-eras.index') }}">Eras</a></li>
+          <li class="active">Add new Era</li>
         </ol>
       </section>
 
       <!-- Main content -->
       <section class="content">
           <div class="row">
-              {!! Form::model($category, [
+              {!! Form::model($era, [
                   'method' => 'POST',
-                  'route'  => 'backend.categories.store',
+                  'route'  => 'backend.backend-eras.store',
                   'files'  => TRUE,
-                  'id' => 'category-form'
+                  'id' => 'post-form'
               ]) !!}
 
-              @include('backend.categories.form')
+              @include('backend.eras.form')
 
             {!! Form::close() !!}
           </div>
@@ -41,4 +41,4 @@
 
 @endsection
 
-@include('backend.categories.script')
+@include('backend.eras.script')

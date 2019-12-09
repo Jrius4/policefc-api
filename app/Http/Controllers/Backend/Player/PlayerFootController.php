@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Backend\Player;
 
 use Illuminate\Http\Request;
 use App\SoccerModels\PlayerFoot;
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\Backend\BackendController;
 
 class PlayerFootController extends BackendController
@@ -28,7 +27,7 @@ class PlayerFootController extends BackendController
      */
     public function create(PlayerFoot $playerFoot)
     {
-        return view("backend.player-foot.create",compact('playerFoot'));        
+        return view("backend.player-foot.create",compact('playerFoot'));
     }
 
     /**

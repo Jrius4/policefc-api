@@ -16,6 +16,7 @@ class PlayerPositionsTable extends Migration
         Schema::create('player_positions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->string('slug');
             $table->string('abbrev')->nullable();
             $table->timestamps();
         });

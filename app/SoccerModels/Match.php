@@ -10,13 +10,21 @@ use Illuminate\Database\Eloquent\Model;
 class Match extends Model
 {
     protected $fillable = [
+        'title',
+        'slug',
         'date',
         'venue',
         'home_team_score',
         'away_team_score',
+        'short_description',
         'home_team_id',
         'away_team_id',
     ];
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+    protected $dates =['date'];
 
     public function teams()
     {
@@ -32,4 +40,5 @@ class Match extends Model
     {
         return $this->hasOne(MatchReport::class);
     }
+
 }

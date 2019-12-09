@@ -16,6 +16,7 @@ class CreateAchievementCategoriesTable extends Migration
         Schema::create('achievement_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('slug');
             $table->timestamps();
         });
     }

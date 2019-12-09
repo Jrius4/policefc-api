@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Backend\Product;
 
-use App\SoccerModels\ProductCategory;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\SoccerModels\ProductCategory;
+use App\Http\Controllers\Backend\BackendController;
 
-class ProductCategoryController extends Controller
+class ProductCategoryController extends BackendController
 {
     /**
      * Display a listing of the resource.

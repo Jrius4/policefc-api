@@ -15,13 +15,13 @@
         </div>
         <div class="box">
                 <div  class="box-body">
-                        <div class="form-group {{ $errors->has('social_media_name_id') ? 'has-error' : '' }}">
-                                {!! Form::label('social_media_name') !!}
-                            {!! Form::select('social_media_name_id', App\SoccerModels\SocialMediaName::pluck('name', 'id'), null, ['class' => 'form-control', 'placeholder' => 'Choose media name']) !!}
+                        <div class="form-group {{ $errors->has('media_name') ? 'has-error' : '' }}">
+                                {!! Form::label('social_media_name') !!} <div><a href="{{ route('backend.social-media-names.index') }}">Add Social Media Name</a></div>
+                            {!! Form::select('media_name', App\SoccerModels\SocialMediaName::pluck('name', 'name'), null, ['class' => 'form-control', 'placeholder' => 'Choose media name']) !!}
                             
                     
-                                @if($errors->has('social_media_name_id'))
-                                    <span class="help-block">{{ $errors->first('social_media_name_id') }}</span>
+                                @if($errors->has('media_name'))
+                                    <span class="help-block">{{ $errors->first('media_name') }}</span>
                                 @endif
                             </div>
                 </div>

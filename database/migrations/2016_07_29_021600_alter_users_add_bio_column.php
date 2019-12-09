@@ -13,7 +13,7 @@ class AlterUsersAddBioColumn extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->text('bio',1000)->nullable();
+            $table->text('bio')->nullable();
         });
     }
 

@@ -1,6 +1,6 @@
 @extends('layouts.backend.main')
 
-@section('title', 'Police F.C | Edit Teams')
+@section('title', 'Police F.C | Edit Partners')
 
 @section('content')
 
@@ -8,14 +8,14 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Teams
-          <small>Edit Team</small>
+          Partners
+          <small>Edit Partner</small>
         </h1>
         <ol class="breadcrumb">
           <li>
               <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
           </li>
-          <li><a href="{{ route('backend.teams.index') }}">Teams</a></li>
+          <li><a href="{{ route('backend.partners.index') }}">Partners</a></li>
           <li class="active">Edit Player</li>
         </ol>
       </section>
@@ -23,14 +23,14 @@
       <!-- Main content -->
       <section class="content">
           <div class="row">
-              {!! Form::model($team, [
+              {!! Form::model($partner, [
                   'method' => 'PUT',
-                  'route'  => ['backend.teams.update', $team->id],
+                  'route'  => ['backend.partners.update', $partner->id],
                   'files'  => TRUE,
                   'id' => 'post-form'
               ]) !!}
 
-              @include('backend.teams.form')
+              @include('backend.partners.form')
 
             {!! Form::close() !!}
           </div>
@@ -41,4 +41,4 @@
 
 @endsection
 
-@include('backend.teams.script')
+@include('backend.partners.script')

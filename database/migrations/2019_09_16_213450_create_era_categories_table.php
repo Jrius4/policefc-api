@@ -16,6 +16,7 @@ class CreateEraCategoriesTable extends Migration
         Schema::create('era_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('slug');
             $table->timestamps();
         });
     }

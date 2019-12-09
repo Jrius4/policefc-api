@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Backend\Partner;
 
-use App\SoccerModels\Partner;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\SoccerModels\Partner;
+use App\Http\Controllers\Backend\BackendController;
 
-class PartnerController extends Controller
+class PartnerController extends BackendController
 {
     /**
      * Display a listing of the resource.

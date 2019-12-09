@@ -24,7 +24,17 @@ class ApiPostController extends Controller
                     ->get();
         $posts = $this->paginate($posts);
         return response()->json($posts,200);
-    }   
+    }  
+    
+    public function ourNews()
+    {
+        $posts = Post::with('author', 'tags', 'category', 'comments')
+                    ->latestFirst()
+                    ->published()
+                    ->filter(request()->only(['term', 'year', 'month']))
+                    ->simplePaginate(2)->all();
+        return response()->json($posts,200);
+    }
 
     /**
      * Show the form for creating a new resource.

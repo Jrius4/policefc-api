@@ -16,6 +16,7 @@ class CreateWallOfFameCategoriesTable extends Migration
         Schema::create('wall_of_fame_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('slug');
             $table->timestamps();
         });
     }

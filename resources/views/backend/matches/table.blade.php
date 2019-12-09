@@ -33,9 +33,9 @@
                 </td>
                 <td>{{ $match->date }}</td>
                 <td>{{ App\SoccerModels\Team::all()->where('id',$match->home_team_id)->first()->name}}</td>
-                <td>{{ $match->away_team_score }}</td>
+                <td>{{ $match->home_team_score }}</td>
                 <td>{{ App\SoccerModels\Team::all()->where('id',$match->away_team_id)->first()->name}}</td>
-                 <td>{{ $match->home_team_score }}</td>
+                 <td>{{ $match->away_team_score }}</td>
                  <td>{{ $match->venue }}</td>
                  <td>{{ $match->matchReport !=null? $match->matchReport->title : 'No Report yet'}}</td>
             </tr>

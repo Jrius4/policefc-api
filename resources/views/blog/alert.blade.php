@@ -1,23 +1,24 @@
 @if (isset($categoryName))
-    <div class="alert alert-info">
-        <p>Category: <strong>{{ $categoryName }}</strong></p>
-    </div>
+   
+        Category: <strong>{{ $categoryName }}</strong>
+   
 @endif
 
 @if (isset($tagName))
-    <div class="alert alert-info">
-        <p>Tagged: <strong>{{ $tagName }}</strong></p>
-    </div>
+   
+        Tagged: <strong>{{ $tagName }}</strong>
+   
 @endif
 
 @if (isset($authorName))
-    <div class="alert alert-info">
-        <p>Author: <strong>{{ $authorName }}</strong></p>
-    </div>
+   
+        Author: <strong>{{ $authorName }}</strong>
+   
 @endif
 
 @if ($term = request('term'))
-    <div class="alert alert-info">
-        <p>Search Results for: <strong>{{ $term }}</strong></p>
-    </div>
+   
+        Search Results for: <strong>{{ $term }}</strong>
+   
 @endif
+

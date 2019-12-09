@@ -17,7 +17,8 @@ class WallOfFamesTable extends Migration
             $table->bigIncrements('id');
             $table->string('image');
             $table->string('title');
-            $table->string('text',1000);
+            $table->string('slug');
+            $table->text('text');
             $table->unsignedBigInteger('wall_of_fame_category_id');
             $table->timestamps();
 

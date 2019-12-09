@@ -63,10 +63,11 @@ Route::resource('/users','User\UserController',['excerpt'=>['create','edit']]);
   Posts
 */
 Route::resource('/sport-posts','ApiPostController',['only'=>['index','show']]);
+Route::get('/our-posts','ApiPostController@ourNews');
 // Route::resource('/sport-posts.comments','Post\PostCommentController',['only'=>['index','show','store']]);
 Route::resource('/sport-posts.comments','Post\PostCommentController',['only'=>['index','store']]);
 // Route::post('/sport-posts/{sport-posts}/comments','CommentsController@store');
-Route::get('/home-teams',function(){
-$homeTeams = App\SoccerModels\HomeTeam::all();
-return response()->json($homeTeams,200);
+Route::get('/post-categories',function(){
+$postCategories = App\Category::with('posts')->get();
+return response()->json($postCategories,200);
 });

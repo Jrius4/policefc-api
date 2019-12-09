@@ -2,57 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NDEBITECH</title>
-    <link rel="shortcut icon" href="/img/ndebi-tech-favi-blue.png" type="image/x-icon">
-
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
-    {{-- <link rel="stylesheet" href="/css/bootstrap.min.css"> --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Police fc</title>
     <link rel="stylesheet" href="/static/css/app.css">
-    <link rel="stylesheet" href="/css/custom.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link href="/assets/images/favicon.ico" rel="shortcut icon">
+    <link href="/assets/css/akslider.css" rel="stylesheet"/>
+    <link href="/assets/css/donate.css" rel="stylesheet"/>
+    <link href="/assets/css/theme.css" rel="stylesheet"/>
+
 </head>
-<body>
-  <div>
-   @include('layouts.inc.navbar')
+<body class="tm-isblog">
 
-      {{-- navigation bar --}}
-        
-      
-
- 
-
- 
-            @yield('content')
-
-
-   
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <p class="copyright">&copy; 2019 NDEBITECH</p>
-                </div>
-                <div class="col-md-4">
-                    <nav>
-                        <ul class="social-icons">
-                            <li><a href="#" class="i fa fa-facebook"></a></li>
-                            <li><a href="#" class="i fa fa-twitter"></a></li>
-                            <li><a href="#" class="i fa fa-google-plus"></a></li>
-                            <li><a href="#" class="i fa fa-github"></a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+        <div class="preloader">
+            <div class="loader"></div>
         </div>
-    </footer>
-  </div>
 
-    {{-- <script src="/js/bootstrap.min.js"></script> --}}
-    <script src="/static/js/app.js"></script>
-    <script src="/static/js/jquery.min.js"></script>
-    <script src="/static/js/ScrollMagic.min.js"></script>
-    <script src="/static/js/drop-downmenu.js"></script>
+    <div class="over-wrap">
+        @include('layouts.home.navbar')
+        @yield('content')
+        @include('layouts.home.footer')
+    </div>
+
+
+
+
+<script type="text/javascript" src="/assets/js/jquery.js"></script>
+<script type="text/javascript" src="/assets/js/uikit.js"></script>
+<script type="text/javascript" src="/assets/js/SimpleCounter.js"></script>
+<script type="text/javascript" src="/assets/js/components/grid.js"></script>
+<script type="text/javascript" src="/assets/js/components/slider.js"></script>
+<script type="text/javascript" src="/assets/js/components/slideshow.js"></script>
+<script type="text/javascript" src="/assets/js/components/slideset.js"></script>
+<script type="text/javascript" src="/assets/js/components/sticky.js"></script>
+<script type="text/javascript" src="/assets/js/components/lightbox.js"></script>
+<script type="text/javascript" src="/assets/js/isotope.pkgd.min.js"></script>
+
+<script type="text/javascript" src="/assets/js/theme.js"></script>
+<script type="text/javascript">
+    new SimpleCounter("countdown4", 1476154800, {
+      'continue': 0,
+      format: '{D} {H} {M} {S}',
+      lang: {
+          d: {
+              single: 'day',
+              plural: 'days'
+          }, //days
+          h: {
+              single: 'hr',
+              plural: 'hrs'
+          }, //hours
+          m: {
+              single: 'min',
+              plural: 'min'
+          }, //minutes
+          s: {
+              single: 'sec',
+              plural: 'sec'
+          } //seconds
+      },
+      formats: {
+          full: "<span class='countdown_number' style='color:  '>{number} </span> <span class='countdown_word' style='color:  '>{word}</span> <span class='countdown_separator'>:</span>", //Format for full units representation
+          shrt: "<span class='countdown_number' style='color:  '>{number} </span>" //Format for short unit representation
+      }
+  });
+</script>
+
+<script src="/js/app.js"></script>
+
 </body>
 </html>

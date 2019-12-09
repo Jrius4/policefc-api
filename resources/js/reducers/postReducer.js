@@ -1,6 +1,8 @@
-import {ADD_POST,POST_LOADING, GET_POSTS,GET_POSTS_PAGES,DELETE_POST, GET_POST, GET_POST_COMMENTS, GET_POST_COMMENTS_PAGES} from '../actions/types';
+import {ADD_POST,POST_LOADING, GET_POSTS,GET_POSTS_PAGES,DELETE_POST, GET_POST, GET_POST_COMMENTS, GET_POST_COMMENTS_PAGES, GET_2_POSTS, GET_POST_CATEGORIES} from '../actions/types';
 const initialState ={
     posts: [],
+    ourposts: [],
+    categories: [],
     post:[],
     comments: [],
     loading:false
@@ -11,7 +13,19 @@ export default function(state = initialState, action ){
         case POST_LOADING:
             return{
                 ...state,
-                loading:true
+                loading:true,
+            }
+        case GET_2_POSTS:
+            return{
+                ...state,
+                loading:false,
+                ourposts:action.payload,
+            }
+        case GET_POST_CATEGORIES:
+            return{
+                ...state,
+                loading:false,
+                categories:action.payload,
             }
         case GET_POSTS:
             return {

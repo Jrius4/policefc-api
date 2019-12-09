@@ -10344,6 +10344,12 @@ q {
   text-align: right;
   position: absolute;
 }
+.highlight-text{
+background: #0000006b;
+color: #fff;
+padding: 5px;
+font-size: 1.8em;
+}
 .va-promo-text h3 {
   padding: 0 20px;
   color: #fff;

@@ -17,8 +17,9 @@ class VideosTable extends Migration
             $table->bigIncrements('id');
             $table->string('url');
             $table->string('title');
+            $table->string('slug');
             $table->string('overview')->nullable();
-            $table->string('body',1000)->nullable();
+            $table->text('body')->nullable();
             $table->bigInteger('video_category_id')->unsigned();
             $table->timestamps();
 

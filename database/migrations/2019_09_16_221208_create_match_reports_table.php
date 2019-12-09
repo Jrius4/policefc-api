@@ -17,7 +17,8 @@ class CreateMatchReportsTable extends Migration
             $table->bigIncrements('id');
             $table->string('image');
             $table->string('title');
-            $table->string('body',1000);
+            $table->string('slug');
+            $table->text('body');
             $table->unsignedBigInteger('match_id');
             $table->timestamps();
 

@@ -56,6 +56,7 @@
     <div class="box">
         <div class="box-header with-border">
             <h3 class="box-title">Positions</h3>
+            <h4><a href="{{ route('backend.support-member-positions.index') }}">Add Position</a></h4>
         </div>
         <div class="box-body">
             <div class="form-group {{ $errors->has('support_member_position_id') ? 'has-error' : '' }}">

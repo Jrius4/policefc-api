@@ -15,10 +15,15 @@ class ErasTable extends Migration
     {
         Schema::create('eras', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('title');
-            $table->string('text',1000);
-            $table->unsignedBigInteger('era_category_id');
+            $table->string('slug');
+            $table->string('excerpt',1000);
+            $table->text('body');
+            $table->string('occurance_date');
+            $table->unsignedBigInteger('era_category_id')->nullable();
+            $table->softDeletes();
+
             $table->timestamps();
 
             $table->foreign('era_category_id')->references('id')->on('era_categories');

@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Backend\Achievement;
 
 use App\AchievementCategory;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Backend\BackendController;
 
-class AchievementCategoryController extends Controller
+class AchievementCategoryController extends BackendController
 {
     /**
      * Display a listing of the resource.

@@ -29,13 +29,8 @@
                 </td>
                 <td>{{ $link->player->last_name }}</td>
                 <td>{{ $link->url}}</td>
-                <td>
-                   @foreach ($ssm as $item)
-                       @if ($item->id == $link->social_media_name_id)
-                           {{$item->name}}
-                       @endif
-                   @endforeach
-                </td>
+                <td>{{ $link->media_name}}</td>
+                
             </tr>
 
         @endforeach

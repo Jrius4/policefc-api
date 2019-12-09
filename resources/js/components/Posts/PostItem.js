@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const PostItem = (props) => {
   return (
-    <div className="card shadow-sm col-xl-2 col-lg-4 col-md-3 col-sm-12 col-xs-12 m-1">
+    <div className="card shadow-sm col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 m-1">
         {
           isEmpty(props.image) ? null: (
              <div>

@@ -28,6 +28,10 @@ class SupportMember extends Model
         return $this->belongsTo(SupportMemberPosition::class);
     }
 
+    public function supportMemberLinks(){
+        return $this->hasMany(SupportMemberSocialMediaLink::class);
+    }
+
     public function getProfilePicUrlAttribute($value)
     {
         $profilePicUrl = "";

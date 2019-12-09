@@ -6,12 +6,12 @@ use App\MatchReport;
 use App\SoccerModels\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-use App\Http\Controllers\Controller;
-use Illuminate\Pagination\LengthAwarePaginator;
 use Intervention\Image\Facades\Image;
+use Illuminate\Pagination\LengthAwarePaginator;
+use App\Http\Controllers\Backend\BackendController;
 
 
-class MatchReportController extends Controller
+class MatchReportController extends BackendController
 {
 
     protected $uploadPath;
@@ -33,7 +33,7 @@ class MatchReportController extends Controller
         $matchReportsCount = $matchReports->count();
         $teams = Team::get();
 
-        return view("backend.match-reports.index",compact('matchReports','matchReportCounter','matchReportsCount','teams')); 
+        return view("backend.match-reports.index",compact('matchReports','matchReportCounter','matchReportsCount','teams'));
     }
 
     /**
@@ -98,7 +98,7 @@ class MatchReportController extends Controller
     public function update(Request $request, $id)
     {
         $matchReport     = MatchReport::findOrFail($id);
-        
+
         $oldImage = $matchReport->image;
         $data     = $this->handleRequest($request);
 
@@ -149,7 +149,7 @@ class MatchReportController extends Controller
 
             $data['image'] = $fileName;
         }
-   
+
     return $data;
 }
 

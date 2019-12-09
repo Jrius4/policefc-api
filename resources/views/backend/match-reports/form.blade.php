@@ -10,6 +10,14 @@
                 <span class="help-block">{{ $errors->first('title') }}</span>
             @endif
         </div>
+        <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
+            {!! Form::label('slug') !!}
+            {!! Form::text('slug', null, ['class' => 'form-control']) !!}
+
+            @if($errors->has('slug'))
+                <span class="help-block">{{ $errors->first('slug') }}</span>
+            @endif
+        </div>
         <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
             {!! Form::label('body') !!}
             {!! Form::textarea('body', null, ['id'=>'article-ckeditor','class' => 'form-control']) !!}
@@ -25,7 +33,7 @@
         </div>
         <div class="box-body">
             <div class="form-group {{ $errors->has('match_id') ? 'has-error' : '' }}">
-                {!! Form::select('match_id', App\SoccerModels\Match::pluck('date', 'id'), null, ['class' => 'form-control', 'placeholder' => 'Choose match day']) !!}
+                {!! Form::select('match_id', App\SoccerModels\Match::pluck('title', 'id'), null, ['class' => 'form-control', 'placeholder' => 'Choose match day']) !!}
 
                 @if($errors->has('match_id'))
                     <span class="help-block">{{ $errors->first('match_id') }}</span>
@@ -51,7 +59,7 @@
                   </div>
                 </div>
 
-                
+
 
                 @if($errors->has('image'))
                     <span class="help-block">{{ $errors->first('image') }}</span>

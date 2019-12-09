@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Backend\SupportMember;
 
-use App\SoccerModels\SupportMember;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Intervention\Image\Facades\Image;
-
-
 use Illuminate\Support\Collection;
-use Illuminate\Pagination\LengthAwarePaginator;
+use App\SoccerModels\SupportMember;
 
-class SupportMemberController extends Controller
+
+use Intervention\Image\Facades\Image;
+use Illuminate\Pagination\LengthAwarePaginator;
+use App\Http\Controllers\Backend\BackendController;
+
+class SupportMemberController extends BackendController
 {
     protected $uploadPath;
 
@@ -30,7 +30,7 @@ class SupportMemberController extends Controller
         $supportMembers = SupportMember::with('supportMemberPosition')->latest()->get();
         $supportMembers = $this->paginate($supportMembers);
         $supportMembersCount = $supportMembers->count();
-        return view("backend.support-members.index",compact('supportMembers','supportMembersCount','supportMembersCounter'));  
+        return view("backend.support-members.index",compact('supportMembers','supportMembersCount','supportMembersCounter'));
     }
 
     /**
@@ -40,7 +40,7 @@ class SupportMemberController extends Controller
      */
     public function create(SupportMember $supportMember)
     {
-        return view("backend.support-members.create",compact('supportMember'));  
+        return view("backend.support-members.create",compact('supportMember'));
     }
 
     /**
@@ -59,7 +59,7 @@ class SupportMemberController extends Controller
             'is_executive'=>'required',
             'bio'=>'required',
         ];
-        
+
         $this->validate($request,$rules);
         $data = $this->handleRequest($request);
         $member = SupportMember::create($data);

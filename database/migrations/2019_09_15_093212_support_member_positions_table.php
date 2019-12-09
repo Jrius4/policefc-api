@@ -16,6 +16,7 @@ class SupportMemberPositionsTable extends Migration
         Schema::create('support_member_positions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->string('slug');
             $table->string('abbrev')->nullable();
             $table->timestamps();
         });

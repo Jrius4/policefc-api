@@ -1,6 +1,6 @@
 @extends('layouts.backend.main')
 
-@section('title', 'MyBlog | Edit category')
+@section('title', 'Police F.C | Edit Social Media Name')
 
 @section('content')
 
@@ -8,29 +8,29 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Categories
-          <small>Edit category</small>
+          Social Media Names
+          <small>Edit Social Media Name</small>
         </h1>
         <ol class="breadcrumb">
           <li>
               <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
           </li>
-          <li><a href="{{ route('backend.categories.index') }}">Categories</a></li>
-          <li class="active">Edit Category</li>
+          <li><a href="{{ route('backend.social-media-names.index') }}">Social Media Names</a></li>
+          <li class="active">Edit Social Media Name</li>
         </ol>
       </section>
 
       <!-- Main content -->
       <section class="content">
           <div class="row">
-              {!! Form::model($category, [
+              {!! Form::model($socialMediaName, [
                   'method' => 'PUT',
-                  'route'  => ['backend.categories.update', $category->id],
+                  'route'  => ['backend.social-media-names.update', $socialMediaName->id],
                   'files'  => TRUE,
                   'id' => 'post-form'
               ]) !!}
 
-              @include('backend.categories.form')
+              @include('backend.social-media-names.form')
 
             {!! Form::close() !!}
           </div>
@@ -41,4 +41,4 @@
 
 @endsection
 
-@include('backend.categories.script')
+@include('backend.social-media-names.script')

@@ -17,8 +17,9 @@ class AchievementsTable extends Migration
             $table->bigIncrements('id');
             $table->string('image');
             $table->string('title');
+            $table->string('slug');
             $table->string('overview')->nullable();
-            $table->string('body',1000)->nullable();
+            $table->text('body')->nullable();
             $table->bigInteger('achievement_category_id')->unsigned();
             $table->timestamps();
 

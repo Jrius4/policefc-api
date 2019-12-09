@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Backend\Team;
 
 use App\SoccerModels\Team;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 
 use Intervention\Image\Facades\Image;
-use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\Http\Controllers\Backend\BackendController;
 
 
-class TeamController extends Controller
+class TeamController extends BackendController
 {
     /**
      * Display a listing of the resource.
@@ -36,7 +36,7 @@ class TeamController extends Controller
         $teams = Team::latest()->get();
         $teams = $this->paginate($teams);
         $teamCount = $teams->count();
-        return view("backend.teams.index",compact('teams','teamCount','teamCounter'));        
+        return view("backend.teams.index",compact('teams','teamCount','teamCounter'));
     }
 
     /**
@@ -46,7 +46,7 @@ class TeamController extends Controller
      */
     public function create(Team $team)
     {
-        return view("backend.teams.create",compact('team'));        
+        return view("backend.teams.create",compact('team'));
     }
 
     /**
@@ -57,7 +57,7 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $data = $this->handleRequest($request);
         $team = Team::create($data);
 
@@ -114,7 +114,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        return view("backend.teams.edit",compact('team'));                
+        return view("backend.teams.edit",compact('team'));
     }
 
     /**

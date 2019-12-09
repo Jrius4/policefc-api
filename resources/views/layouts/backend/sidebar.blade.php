@@ -97,7 +97,7 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="#"><i class="fa fa-circle-o"></i>View Eras</a></li>
+            <li><a href="{{route('backend.backend-eras.index')}}"><i class="fa fa-circle-o"></i>View Eras</a></li>
               <li><a href="#"><i class="fa fa-circle-o"></i>Era Category</a></li>
               <li><a href="#"><i class="fa fa-circle-o"></i>Add New Era</a></li>
             </ul>
@@ -157,6 +157,7 @@
               <li><a href="#"><i class="fa fa-circle-o"></i>Add New Achievement</a></li>
             </ul>
       </li>
+    <li><a href="{{route('backend.partners.index')}}"><i class="fa fa-users"></i> <span>Partners</span></a></li>
       <li class="treeview">
           <a href="#">
               <i class="fa fa-pencil"></i>
@@ -171,7 +172,7 @@
               <li><a href="#"><i class="fa fa-circle-o"></i>Add New Fame</a></li>
             </ul>
       </li>
-      <li><a href="#"><i class="fa fa-users"></i> <span>Social Media Names</span></a></li>
+    <li><a href="{{route('backend.social-media-names.index')}}"><i class="fa fa-users"></i> <span>Social Media Names</span></a></li>
     </ul>
   </section>
   <!-- /.sidebar -->

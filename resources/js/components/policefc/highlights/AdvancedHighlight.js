@@ -6,13 +6,13 @@ import './styles.css';
 import 'react-animated-slider-2/build/horizontal.css';
 const AdvancedHighlight = (props) => {
   return (
-    
+	<>   
 <Slider autoplay={3000} className="showcase">
 	{props.posts.map((item, index) => (
 		<div
 			key={index}
             
-            style={{background: item.image !==null?`url('/img/${item.image}') no-repeat center center`:`linear-gradient(90deg, rgba(2,0,36,1) 10%, rgba(9,9,121,1) 63%, rgba(1,18,22,1) 100%)`}}
+            style={{background: item.image !==null?`url('/img/${item.image}') no-repeat center center`:`linear-gradient(90deg, rgba(2,0,36,1) 10%, rgba(9,9,121,1) 63%, rgba(1,18,22,1) 100%)`,width:'100%'}}
 		>
 			<div className="uk-position-cover uk-flex-middle">
 				
@@ -28,6 +28,7 @@ const AdvancedHighlight = (props) => {
 		</div>
 	))}
 </Slider>
+</>
   )
 }
 

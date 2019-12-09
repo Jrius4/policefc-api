@@ -2,16 +2,22 @@
 
 namespace App;
 
-use App\EraCategory;
+use App\Era;
 use Illuminate\Database\Eloquent\Model;
 
 class EraCategory extends Model
 {
     protected $fillable = [
+        'slug',
         'title',
     ];
 
-    public function eraCategory(){
-        return $this->hasMany(EraCategory::class);
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function eras(){
+        return $this->hasMany(Era::class);
     }
 }

@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Backend\SupportMember;
 
-use App\SoccerModels\SupportMemberSocialMediaLink;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
 use Illuminate\Support\Collection;
 
 use App\SoccerModels\SocialMediaName;
+
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\SoccerModels\SupportMemberSocialMediaLink;
+use App\Http\Controllers\Backend\BackendController;
 
 
-class SupportMemberSocialMediaLinkController extends Controller
+class SupportMemberSocialMediaLinkController extends BackendController
 {
     /**
      * Display a listing of the resource.
@@ -22,11 +22,11 @@ class SupportMemberSocialMediaLinkController extends Controller
     public function index()
     {
         $supportMemberSocialMediaLinkCounter = SupportMemberSocialMediaLink::all();
-        $supportMemberSocialMediaLinks = SupportMemberSocialMediaLink::with('supportMember','socialMediaName')->latest()->get();
+        $supportMemberSocialMediaLinks = SupportMemberSocialMediaLink::with('supportMember')->latest()->get();
         $supportMemberSocialMediaLinks = $this->paginate($supportMemberSocialMediaLinks);
         $ssm=SocialMediaName::all();
         $supportMemberSocialMediaLinkCount = $supportMemberSocialMediaLinks->count();
-        return view("backend.support-member-social-media.index",compact('supportMemberSocialMediaLinks','supportMemberSocialMediaLinkCount','supportMemberSocialMediaLinkCounter','ssm')); 
+        return view("backend.support-member-social-media.index",compact('supportMemberSocialMediaLinks','supportMemberSocialMediaLinkCount','supportMemberSocialMediaLinkCounter','ssm'));
     }
 
     /**
@@ -36,8 +36,8 @@ class SupportMemberSocialMediaLinkController extends Controller
      */
     public function create(SupportMemberSocialMediaLink $supportMemberSocialMediaLink)
     {
-        return view("backend.support-member-social-media.create",compact('supportMemberSocialMediaLink'));        
-        
+        return view("backend.support-member-social-media.create",compact('supportMemberSocialMediaLink'));
+
     }
 
     /**
@@ -50,7 +50,7 @@ class SupportMemberSocialMediaLinkController extends Controller
     {
         $rules = [
             'url'=>'required',
-            'social_media_name_id'=>'required',
+            'media_name'=>'required',
             'support_member_id'=>'required',
         ];
         $this->validate($request,$rules);
@@ -95,7 +95,7 @@ class SupportMemberSocialMediaLinkController extends Controller
     {
         $rules = [
             'url'=>'required',
-            'social_media_name_id'=>'required',
+            'media_name'=>'required',
             'support_member_id'=>'required',
         ];
         $this->validate($request,$rules);
@@ -116,7 +116,7 @@ class SupportMemberSocialMediaLinkController extends Controller
     {
         $supportMemberSocialMediaLink = SupportMemberSocialMediaLink::findOrFail($id);
         $supportMemberSocialMediaLink->delete($id);
-        return redirect("backend/support-members/support-member-social-media")->with("message", "player social was deleted successfully!");  
+        return redirect("backend/support-members/support-member-social-media")->with("message", "player social was deleted successfully!");
     }
 
     protected function paginate(Collection $collection)

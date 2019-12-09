@@ -15,31 +15,31 @@ class TagsTableSeeder extends Seeder
     {
         DB::table('tags')->delete();
 
-        $php = new Tag();
-        $php->name = "PHP";
-        $php->slug = "php";
-        $php->save();
+        $startimes = new Tag();
+        $startimes->name = "STARTIMES";
+        $startimes->slug = "startimes";
+        $startimes->save();
 
-        $laravel = new Tag();
-        $laravel->name = "Laravel";
-        $laravel->slug = "Laravel";
-        $laravel->save();
+        $sportbiz = new Tag();
+        $sportbiz->name = "SPORTBIZ";
+        $sportbiz->slug = "sportbiz";
+        $sportbiz->save();
 
-        $symphony = new Tag();
-        $symphony->name = "Symphony";
-        $symphony->slug = "symphony";
-        $symphony->save();
+        $winners = new Tag();
+        $winners->name = "Winners";
+        $winners->slug = "winners";
+        $winners->save();
 
-        $vue = new Tag();
-        $vue->name = "React JS";
-        $vue->slug = "reactjs";
-        $vue->save();
+        $victories = new Tag();
+        $victories->name = "Victories";
+        $victories->slug = "victories";
+        $victories->save();
 
         $tags = [
-            $php->id,
-            $laravel->id,
-            $symphony->id,
-            $vue->id
+            $startimes->id,
+            $sportbiz->id,
+            $winners->id,
+            $victories->id
         ];
 
         foreach (Post::all() as $post)

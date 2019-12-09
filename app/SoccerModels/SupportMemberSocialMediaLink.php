@@ -15,7 +15,7 @@ class SupportMemberSocialMediaLink extends Model
     ];
 
     
-    public function socialMediaName(){
-        return $this->belongsTo(SocialMediaName::class);
+    public function supportMember(){
+        return $this->belongsTo(SupportMember::class);
     }
 }

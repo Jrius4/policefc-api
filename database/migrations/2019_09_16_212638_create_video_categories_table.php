@@ -16,6 +16,7 @@ class CreateVideoCategoriesTable extends Migration
         Schema::create('video_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('slug');
             $table->timestamps();
         });
     }

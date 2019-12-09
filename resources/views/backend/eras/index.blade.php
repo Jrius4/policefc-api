@@ -1,6 +1,6 @@
 @extends('layouts.backend.main')
 
-@section('title', 'MyBlog | Categories')
+@section('title', 'Police F.C | Eras index')
 
 @section('content')
 
@@ -8,15 +8,15 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Categories
-          <small>Display All categories</small>
+          Eras
+          <small>Display All eras</small>
         </h1>
         <ol class="breadcrumb">
           <li>
               <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
           </li>
-          <li><a href="{{ route('backend.categories.index') }}">Categories</a></li>
-          <li class="active">All categories</li>
+          <li><a href="{{ route('backend.backend-eras.index') }}">Eras</a></li>
+          <li class="active">All Eras</li>
         </ol>
       </section>
 
@@ -27,30 +27,42 @@
               <div class="box">
                 <div class="box-header clearfix">
                     <div class="pull-left">
-                        <a href="{{ route('backend.categories.create') }}" class="btn btn-success"><i class="fa fa-plus"></i> Add New</a>
+                        <a href="{{ route('backend.backend-eras.create') }}" class="btn btn-success"><i class="fa fa-plus"></i> Add New</a>
                     </div>
-                    <div class="pull-right">
+                    <div class="pull-right" style="padding:7px 0;">
+                        <?php $links = [] ?>
+                        @foreach($statusList as $key => $value)
+                            @if($value)
+                                <?php $selected = Request::get('status') == $key ? 'selected-status' : '' ?>
+                                <?php $links[] = "<a class=\"{$selected}\" href=\"?status={$key}\">" . ucwords($key) . "({$value})</a>" ?>
+                            @endif
+                        @endforeach
+                        {!! implode(' | ', $links) !!}
                     </div>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body ">
                     @include('backend.partials.message')
 
-                    @if (! $categories->count())
+                    @if (! $eras->count())
                         <div class="alert alert-danger">
                             <strong>No record found</strong>
                         </div>
                     @else
-                        @include('backend.categories.table')
+                        @if($onlyTrashed)
+                            @include('backend.eras.table-trash')
+                        @else
+                            @include('backend.eras.table')
+                        @endif
                     @endif
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer clearfix">
                     <div class="pull-left">
-                        {{ $categories->appends( Request::query() )->render() }}
+                        {{ $eras->appends( Request::query() )->render() }}
                     </div>
                     <div class="pull-right">
-                        <small>{{ $categoriesCount }} {{ str_plural('Item', $categoriesCount) }}</small>
+                        <small>{{ $eraCount }} {{ str_plural('Item', $eraCount) }}</small>
                     </div>
                 </div>
               </div>

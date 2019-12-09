@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Backend\Era;
 
 use App\EraCategory;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Backend\BackendController;
 
-class EraCategoryController extends Controller
+class EraCategoryController extends BackendController
 {
     /**
      * Display a listing of the resource.

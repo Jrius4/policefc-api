@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Backend\Player;
 
 use App\PlayerCategory;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Backend\BackendController;
 
-class PlayerCategoryController extends Controller
+class PlayerCategoryController extends BackendController
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +28,7 @@ class PlayerCategoryController extends Controller
     public function create(PlayerCategory $playerCategory)
     {
         return view("backend.player-category.create",compact('playerCategory'));
-        
+
     }
 
     /**

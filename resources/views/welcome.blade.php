@@ -14,7 +14,10 @@
 
 </head>
 <body class="tm-isblog">
+<div>
 <div id='root'></div>
+@include('layouts.home.footer')
+</div>
 
 
 

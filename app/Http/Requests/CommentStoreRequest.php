@@ -25,7 +25,7 @@ class CommentStoreRequest extends Request
     {
         return [
             'author_name'  => 'required',
-            'author_email' => 'required|email',
+            // 'author_email' => 'required|email',
             'body'         => 'required'
         ];
     }

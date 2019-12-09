@@ -16,7 +16,7 @@ const Navbar = () => {
 
             <ul className="uk-navbar-nav uk-hidden-small">
                 <li data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><Link to="/">Home</Link></li>
-                <li data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="about.html">About</a></li>
+                <li data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="/about">About</a></li>
                 <li className="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="#">Team</a>
                     <div className="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
                         <div className="uk-grid uk-dropdown-grid">
@@ -31,7 +31,7 @@ const Navbar = () => {
                         </div>
                     </div>
                 </li>
-                <li className="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><Link to="/matches">Matches</Link>
+                <li className="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><Link to="/matches-list">Matches</Link>
                     <div className="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
                         <div className="uk-grid uk-dropdown-grid">
                             <div className="uk-width-1-1">

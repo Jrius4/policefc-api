@@ -2,32 +2,37 @@
     <thead>
         <tr>
             <td width="80">Action</td>
-            <td>Category Name</td>
-            <td width="120">Post Count</td>
+            <td>Title</td>
+            <td width="150">Category</td>
+            <td width="170">Date</td>
         </tr>
     </thead>
     <tbody>
-        @foreach($categories as $category)
+        <?php $request = request(); ?>
+
+        @foreach($eras as $era)
 
             <tr>
                 <td>
-                    {!! Form::open(['method' => 'DELETE', 'route' => ['backend.categories.destroy', $category->id]]) !!}
-                        <a href="{{ route('backend.categories.edit', $category->id) }}" class="btn btn-xs btn-default">
-                            <i class="fa fa-edit"></i>
-                        </a>
-                        @if($category->id == config('cms.default_category_id'))
-                            <button onclick="return false" type="submit" class="btn btn-xs btn-danger disabled">
-                                <i class="fa fa-times"></i>
+                    {!! Form::open(['method' => 'DELETE', 'route' => ['backend.backend-eras.destroy', $era->id]]) !!}
+                            <a href="{{ route('backend.backend-eras.edit', $era->id) }}" class="btn btn-xs btn-default">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                        
+
+                       
+                            <button type="submit" class="btn btn-xs btn-danger">
+                                <i class="fa fa-trash"></i>
                             </button>
-                        @else
-                            <button onclick="return confirm('Are you sure?');" type="submit" class="btn btn-xs btn-danger">
-                                <i class="fa fa-times"></i>
-                            </button>
-                        @endif
+                       
                     {!! Form::close() !!}
                 </td>
-                <td>{{ $category->title }}</td>
-                <td>{{ $category->posts->count() }}</td>
+                <td>{{ $era->title }}</td>
+                <td>{{ $era->eraCategory->title }}</td>
+                <td>
+                    <abbr title="{{ $era->dateFormatted(true) }}">{{ $era->dateFormatted() }}</abbr> |
+                    {!! $era->occuranceLabel() !!}
+                </td>
             </tr>
 
         @endforeach

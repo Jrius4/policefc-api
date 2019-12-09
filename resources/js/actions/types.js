@@ -8,6 +8,9 @@ export const GET_PROFILES = 'GET_PROFILES';
 
 
 export const GET_POST = 'GET_POST';
+export const GET_POST_CATEGORIES = 'GET_POST_CATEGORIES';
+export const GET_POST_CATEGORY = 'GET_POST_CATEGORY';
+export const GET_2_POSTS = 'GET_2_POST';
 export const GET_POST_COMMENTS = 'GET_POST_COMMENTS';
 export const POST_LOADING = 'POST_LOADING';
 export const ADD_POST = 'ADD_POST';

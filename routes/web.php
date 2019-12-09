@@ -13,8 +13,13 @@
 */
 // react routes
 
-Route::view('/', 'welcome')
-     ->name('react');
+// Route::view('/', 'welcome')
+//      ->name('react');
+//client
+//sports
+Route::get('/',['uses'=>'BlogController@landingPage','as'=>'index']);
+Route::get('/news/{news}',['uses'=>'BlogController@showNews','as'=>'index']);
+//endsports
 
 
 // Blog routes for anything aport from soccer
@@ -43,10 +48,30 @@ Route::get('/how-we-work', [
     'uses' => 'BlogController@howWeWork',
     'as'   => 'how-we-work'
 ]);
+
+
+
+Route::get('/eras', [
+    'uses' => 'ServerRender\Era\EraController@index',
+    'as'   => 'eras'
+]);
+
+Route::get('/eras/{era}', [
+    'uses' => 'ServerRender\Era\EraController@show',
+    'as'   => 'eras.show'
+]);
+
+Route::get('/history-categories/{category}', [
+    'uses' => 'ServerRender\Era\EraController@category',
+    'as'   => 'eras.era-category'
+]);
+
+
 Route::get('/blog', [
     'uses' => 'BlogController@index',
     'as'   => 'blog'
 ]);
+
 
 Route::get('/blog/{post}', [
     'uses' => 'BlogController@show',
@@ -101,16 +126,21 @@ Route::get('/backend/users/confirm/{users}', [
     'as' => 'backend.users.confirm'
 ]);
 Route::resource('/backend/users', 'Backend\UsersController',['as' =>'backend']);
+Route::resource('/backend/partners', 'Backend\Partners\PartnersController',['as' =>'backend']);
 Auth::routes();
 
 // soccer routes
 Route::resource('/backend/social-media-names', 'Backend\SocialMedia\SocialMediaNameController',['as' =>'backend']);
 //player
+//server-render
+Route::resource('/players','ServerRender\Player\PlayerController',['only'=>['index','show'],'as'=>'player']);
 Route::resource('/backend/players/player-categories', 'Backend\Player\PlayerCategoryController',['as' =>'backend']);
 Route::resource('/backend/players/player-feet', 'Backend\Player\PlayerFootController',['as' =>'backend']);
 Route::resource('/backend/players/player-positions', 'Backend\Player\PlayerPositionController',['as' =>'backend']);
 Route::resource('/backend/players/player-social-media', 'Backend\Player\PlayerSocialMediaLinkController',['as' =>'backend']);
 Route::resource('/backend/players', 'Backend\Player\PlayerController',['as' =>'backend']);
+// Route::resource('user', 'UserController');
+Route::resource('/matches','ServerRender\Match\MatchController',['only'=>['index','show'],'as'=>'match']);
 
 //support member
 Route::resource('/backend/support-members/support-member-positions', 'Backend\SupportMember\SupportMemberPositionController',['as' =>'backend']);
@@ -138,7 +168,15 @@ Route::resource('/backend/achievements', 'Backend\Achievement\AchievementControl
 
 //era
 Route::resource('/backend/eras/video-categories', 'Backend\Era\EraCategoryController',['as' =>'backend']);
-Route::resource('/backend/eras', 'Backend\Era\EraController',['as' =>'backend']);
+Route::resource('/backend/backend-eras', 'Backend\Era\EraController',['as' =>'backend']);
+Route::put('/backend/eras/restore/{era}', [
+    'uses' => 'Backend\Era\EraController@restore',
+    'as'   => 'backend.eras.restore'
+]);
+Route::delete('/backend/eras/force-destroy/{era}', [
+    'uses' => 'Backend\Era\EraController@forceDestroy',
+    'as'   => 'backend.eras.force-destroy'
+]);
 
 //wall of fame
 Route::resource('/backend/wall-of-fames/wall-of-fame-categories', 'Backend\WallOfFame\WallOfFameCategoryController',['as' =>'backend']);
@@ -163,7 +201,9 @@ Route::get('/routes', function() {
         }
     echo "</table>";
 });
-
+Route::get('/about',function(){
+    return view('platform.home.about');
+ });
 Route::get('/policefc-admin',function(){
    return redirect('/login');
 });

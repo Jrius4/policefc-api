@@ -53,7 +53,6 @@ class PostCommentController extends Controller
     {
         $rules = [
             'author_name'  => 'required',
-            'author_email' => 'required|email',
             'body'         => 'required',
             'post_id'         => 'required'
         ];

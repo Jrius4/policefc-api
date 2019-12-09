@@ -7,7 +7,7 @@ import {
   GET_POSTS,
   GET_POST,
   POST_LOADING,
-  DELETE_POST,GET_POSTS_PAGES,GET_POST_COMMENTS, GET_POST_COMMENTS_PAGES
+  DELETE_POST,GET_POSTS_PAGES,GET_POST_COMMENTS, GET_POST_COMMENTS_PAGES, GET_2_POSTS, GET_POST_CATEGORIES
 } from './types';
 
 // Add Post
@@ -29,6 +29,24 @@ export const addPost = postData => dispatch => {
     );
 };
 
+// Get 2 Posts
+export const get2Posts = () => dispatch => {
+  dispatch(setPostLoading());
+  axios
+    .get('/api/our-posts')
+    .then(res =>
+      dispatch({
+        type: GET_2_POSTS,
+        payload: res.data,
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_2_POSTS,
+        payload: null
+      })
+    );
+};
 // Get Posts
 export const getPosts = () => dispatch => {
   dispatch(setPostLoading());
@@ -50,6 +68,21 @@ export const getPosts = () => dispatch => {
       })
     );
 };
+
+//get post categories
+export const getCategories = () => dispatch =>{
+  dispatch(setPostLoading());
+  axios
+  .get('/api/post-categories')
+  .then(res=>
+    dispatch({
+      type:GET_POST_CATEGORIES,
+      payload:res.data
+    }))
+    .catch(err=>
+      dispatch({type:GET_POST_CATEGORIES,
+      payload:null}))
+}
 
 export const getPostComments = (postId) => dispatch => {
   

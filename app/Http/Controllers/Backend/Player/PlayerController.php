@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Backend\Player;
 
 use App\SoccerModels\Player;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Intervention\Image\Facades\Image;
-
 use Illuminate\Support\Collection;
+
+use Intervention\Image\Facades\Image;
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\Http\Controllers\Backend\BackendController;
 
 
-class PlayerController extends Controller
+class PlayerController extends BackendController
 {
 
     protected $uploadPath;
@@ -31,7 +31,7 @@ class PlayerController extends Controller
         $players = Player::with('playerPosition','playerCategory','playerFoot')->latest()->get();
         $players = $this->paginate($players);
         $playerCount = $players->count();
-        return view("backend.players.index",compact('players','playerCount','playerCounter'));        
+        return view("backend.players.index",compact('players','playerCount','playerCounter'));
     }
 
     /**
@@ -41,7 +41,7 @@ class PlayerController extends Controller
      */
     public function create(Player $player)
     {
-        return view("backend.players.create",compact('player'));        
+        return view("backend.players.create",compact('player'));
     }
 
     /**
@@ -65,7 +65,7 @@ class PlayerController extends Controller
             'previous_club'=>'required',
             'bio'=>'required',
         ];
-        
+
         $this->validate($request,$rules);
         $data = $this->handleRequest($request);
         $player = Player::create($data);
@@ -73,36 +73,6 @@ class PlayerController extends Controller
         return redirect("/backend/players")->with("message", "New player was update successfully!");
     }
 
-
-    private function handleRequest($request)
-    {
-        $data = $request->all();
-
-        if ($request->hasFile('profile_pic'))
-        {
-            $image       = $request->file('profile_pic');
-            $fileName    = $image->getClientOriginalName();
-            $destination = $this->uploadPath;
-
-            $successUploaded = $image->move($destination, $fileName);
-
-            if ($successUploaded)
-            {
-                $width     = config('cms.players-images.thumbnail.width');
-                $height    = config('cms.players-images.thumbnail.height');
-                $extension = $image->getClientOriginalExtension();
-                $thumbnail = str_replace(".{$extension}", "_thumb.{$extension}", $fileName);
-
-                Image::make($destination . '/' . $fileName)
-                    ->resize($width, $height)
-                    ->save($destination . '/' . $thumbnail);
-            }
-
-            $data['profile_pic'] = $fileName;
-        }
-
-        return $data;
-    }
 
     /**
      * Display the specified resource.
@@ -123,7 +93,7 @@ class PlayerController extends Controller
      */
     public function edit(Player $player)
     {
-        return view("backend.players.edit",compact('player'));                
+        return view("backend.players.edit",compact('player'));
     }
 
     /**
@@ -189,5 +159,37 @@ class PlayerController extends Controller
             if ( file_exists($imagePath) ) unlink($imagePath);
             if ( file_exists($thumbnailPath) ) unlink($thumbnailPath);
         }
+    }
+
+
+
+    private function handleRequest($request)
+    {
+        $data = $request->all();
+
+        if ($request->hasFile('profile_pic'))
+        {
+            $image       = $request->file('profile_pic');
+            $fileName    = $image->getClientOriginalName();
+            $destination = $this->uploadPath;
+
+            $successUploaded = $image->move($destination, $fileName);
+
+            if ($successUploaded)
+            {
+                $width     = config('cms.players-images.thumbnail.width');
+                $height    = config('cms.players-images.thumbnail.height');
+                $extension = $image->getClientOriginalExtension();
+                $thumbnail = str_replace(".{$extension}", "_thumb.{$extension}", $fileName);
+
+                Image::make($destination . '/' . $fileName)
+                    ->resize($width, $height)
+                    ->save($destination . '/' . $thumbnail);
+            }
+
+            $data['profile_pic'] = $fileName;
+        }
+
+        return $data;
     }
 }

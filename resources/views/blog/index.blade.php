@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.home.main')
 
 @section('title', 'Blog')
 
@@ -9,6 +9,8 @@
         <div class="row">
 
             @include('layouts.inc.blogs')
+
+            
 
             @include('layouts.sidebar')
         </div>

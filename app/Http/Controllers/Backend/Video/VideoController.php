@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Backend\Video;
 
 use App\Video;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Backend\BackendController;
 
-class VideoController extends Controller
+class VideoController extends BackendController
 {
     /**
      * Display a listing of the resource.

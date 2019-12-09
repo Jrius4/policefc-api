@@ -1,6 +1,6 @@
 @extends('layouts.backend.main')
 
-@section('title', 'Police F.C | Categories')
+@section('title', 'Police F.C | Police Social Links')
 
 @section('content')
 

@@ -7,15 +7,15 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($categories as $category)
+        @foreach($social_names as $name)
 
             <tr>
                 <td>
-                    {!! Form::open(['method' => 'DELETE', 'route' => ['backend.categories.destroy', $category->id]]) !!}
-                        <a href="{{ route('backend.categories.edit', $category->id) }}" class="btn btn-xs btn-default">
+                    {!! Form::open(['method' => 'DELETE', 'route' => ['backend.social-media-names.destroy', $name->id]]) !!}
+                        <a href="{{ route('backend.social-media-names.edit', $name->id) }}" class="btn btn-xs btn-default">
                             <i class="fa fa-edit"></i>
                         </a>
-                        @if($category->id == config('cms.default_category_id'))
+                        @if($name->id == config('cms.default_category_id'))
                             <button onclick="return false" type="submit" class="btn btn-xs btn-danger disabled">
                                 <i class="fa fa-times"></i>
                             </button>
@@ -26,8 +26,7 @@
                         @endif
                     {!! Form::close() !!}
                 </td>
-                <td>{{ $category->title }}</td>
-                <td>{{ $category->posts->count() }}</td>
+                <td>{{ $name->name }}</td>
             </tr>
 
         @endforeach

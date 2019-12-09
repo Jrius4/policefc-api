@@ -86,7 +86,6 @@ class PlayerList extends Component {
                                 <div className="row justify-content-between">
                                     {
                                         playerContent
-                                        
                                     }
                                    
                                 </div>  

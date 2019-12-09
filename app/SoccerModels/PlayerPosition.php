@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class PlayerPosition extends Model
 {
-    const GOAL_KEEPER = 'goal keeper';
-    const DEFENDER = 'defender';
-    const MID_FIELDER = 'mid fielder';
-    const STRIKER = 'striker';
+    const GOAL_KEEPER = 'GOALKEEPER';
+    const DEFENDER = 'DEFENDER';
+    const MID_FIELDER = 'MIDFIELDER';
+    const STRIKER = 'STRIKER';
 
     const GK = 'gk';
     const DER = 'der';

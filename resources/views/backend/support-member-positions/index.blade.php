@@ -1,6 +1,6 @@
 @extends('layouts.backend.main')
 
-@section('title', 'Police F.C. | Player Position')
+@section('title', 'Police F.C. | Support Member Position')
 
 @section('content')
 
@@ -15,7 +15,7 @@
           <li>
               <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
           </li>
-          <li><a href="{{ route('backend.player-positions.index') }}">Support Member Position</a></li>
+          <li><a href="{{ route('backend.support-member-positions.index') }}">Support Member Position</a></li>
           <li class="active">All support member position</li>
         </ol>
       </section>

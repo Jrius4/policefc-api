@@ -17,6 +17,9 @@
                                   .replace(/^-+|-+$/g, '');
 
             slugInput.val(theSlug);
-        });        
+        });
     </script>
 @endsection
+
+
+

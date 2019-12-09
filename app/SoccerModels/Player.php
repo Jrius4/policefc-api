@@ -16,6 +16,7 @@ class Player extends Model
         'profile_pic',
         'first_name',
         'last_name',
+        'slug',
         'player_position_id',
         'player_foot_id',
         'shirt_no',
@@ -25,6 +26,10 @@ class Player extends Model
         'bio',
         'player_category_id'
     ];
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     public function playerSocialMediaLinks(){
         return $this->hasMany(PlayerSocialMediaLink::class);

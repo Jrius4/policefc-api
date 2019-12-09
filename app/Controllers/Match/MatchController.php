@@ -16,9 +16,15 @@ class MatchController extends ApiController
      */
     public function index()
     {
-        $matches = Match::with('teams','matchReport')->orderBy('updated_at','desc')->get();
+        $matches = Match::with('teams','matchReport')->orderBy('date','asc')->get();
         return response()->json($matches,200);
     }
+    public function footerDown(){
+        $matches = Match::with('teams','matchReport')->orderBy('date','asc')->get();
+        return view('layouts.home.footer',compact('matches'));
+    }
+
+    
 
     /**
      * Show the form for creating a new resource.

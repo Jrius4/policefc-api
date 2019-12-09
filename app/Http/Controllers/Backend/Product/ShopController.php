@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Backend\Product;
 
 use App\SoccerModels\Shop;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Backend\BackendController;
 
-class ShopController extends Controller
+class ShopController extends BackendController
 {
     /**
      * Display a listing of the resource.

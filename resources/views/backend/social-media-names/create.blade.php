@@ -1,6 +1,6 @@
 @extends('layouts.backend.main')
 
-@section('title', 'MyBlog | Add new category')
+@section('title', 'Police F.C | Add new Social Media Name')
 
 @section('content')
 
@@ -8,14 +8,14 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Categories
-          <small>Add new category</small>
+            Social Media Names
+          <small>Add new Social Media Name</small>
         </h1>
         <ol class="breadcrumb">
           <li>
               <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
           </li>
-          <li><a href="{{ route('backend.categories.index') }}">Categories</a></li>
+          <li><a href="{{ route('backend.social-media-names.index') }}">Social Media Names</a></li>
           <li class="active">Add new</li>
         </ol>
       </section>
@@ -23,14 +23,14 @@
       <!-- Main content -->
       <section class="content">
           <div class="row">
-              {!! Form::model($category, [
+              {!! Form::model($socialMediaName, [
                   'method' => 'POST',
-                  'route'  => 'backend.categories.store',
+                  'route'  => 'backend.social-media-names.store',
                   'files'  => TRUE,
                   'id' => 'category-form'
               ]) !!}
 
-              @include('backend.categories.form')
+              @include('backend.social-media-names.form')
 
             {!! Form::close() !!}
           </div>
@@ -41,4 +41,4 @@
 
 @endsection
 
-@include('backend.categories.script')
+@include('backend.social-media-names.script')

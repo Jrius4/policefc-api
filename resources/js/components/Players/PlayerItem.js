@@ -22,7 +22,7 @@ const PlayerItem = (props) => {
         </div>
         <div>
           {props.socialmedia.map((data,index)=>(
-            <div  key={index}>
+            <div key={index}>
               {data.url}
             </div>
           ))}

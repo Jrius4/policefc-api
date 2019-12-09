@@ -4,15 +4,15 @@ namespace App\Http\Controllers\Backend\Player;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-use App\Http\Controllers\Controller;
 
 
 use App\SoccerModels\SocialMediaName;
 use App\SoccerModels\PlayerSocialMediaLink;
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\Http\Controllers\Backend\BackendController;
 
 
-class PlayerSocialMediaLinkController extends Controller
+class PlayerSocialMediaLinkController extends BackendController
 {
     /**
      * Display a listing of the resource.
@@ -22,11 +22,11 @@ class PlayerSocialMediaLinkController extends Controller
     public function index()
     {
         $playerSocialMediaLinkCounter = PlayerSocialMediaLink::all();
-        $playerSocialMediaLinks = PlayerSocialMediaLink::with('player','socialMediaName')->latest()->get();
+        $playerSocialMediaLinks = PlayerSocialMediaLink::with('player')->latest()->get();
         $playerSocialMediaLinks = $this->paginate($playerSocialMediaLinks);
         $ssm=SocialMediaName::all();
         $playerSocialMediaLinkCount = $playerSocialMediaLinks->count();
-        return view("backend.player-social-link.index",compact('playerSocialMediaLinks','playerSocialMediaLinkCount','playerSocialMediaLinkCounter','ssm')); 
+        return view("backend.player-social-link.index",compact('playerSocialMediaLinks','playerSocialMediaLinkCount','playerSocialMediaLinkCounter','ssm'));
     }
 
     /**
@@ -36,7 +36,7 @@ class PlayerSocialMediaLinkController extends Controller
      */
     public function create(PlayerSocialMediaLink $playerSocialMediaLink)
     {
-        return view("backend.player-social-link.create",compact('playerSocialMediaLink'));        
+        return view("backend.player-social-link.create",compact('playerSocialMediaLink'));
     }
 
     /**
@@ -49,7 +49,7 @@ class PlayerSocialMediaLinkController extends Controller
     {
         $rules = [
             'url'=>'required',
-            'social_media_name_id'=>'required',
+            'media_name'=>'required',
             'player_id'=>'required',
         ];
         $this->validate($request,$rules);
@@ -94,7 +94,7 @@ class PlayerSocialMediaLinkController extends Controller
     {
         $rules = [
             'url'=>'required',
-            'social_media_name_id'=>'required',
+            'media_name'=>'required',
             'player_id'=>'required',
         ];
         $this->validate($request,$rules);
@@ -115,7 +115,7 @@ class PlayerSocialMediaLinkController extends Controller
     {
         $playerSocialMediaLink = PlayerSocialMediaLink::findOrFail($id);
         $playerSocialMediaLink->delete($id);
-        return redirect("/backend/players/player-social-media")->with("message", "player social was deleted successfully!");        
+        return redirect("/backend/players/player-social-media")->with("message", "player social was deleted successfully!");
     }
 
     protected function paginate(Collection $collection)

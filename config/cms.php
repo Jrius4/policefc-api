@@ -7,15 +7,29 @@ return [
             'height' => 170
         ]
     ],
+    'era-image' => [
+        'directory' => '/img/eras/',
+        'thumbnail' => [
+            'width' => 250,
+            'height' => 170
+        ]
+    ],
     'players-images'=>[
-        'directory' => 'img/players/',
+        'directory' => '/img/players/',
         'thumbnail' => [
             'width' => 150,
             'height' => 150
         ]
     ],
     'teams'=>[
-        'directory' => 'img/teams/',
+        'directory' => '/img/teams/',
+        'thumbnail' => [
+            'width' => 150,
+            'height' => 150
+        ]
+    ],
+    'partners'=>[
+        'directory' => '/img/partners/',
         'thumbnail' => [
             'width' => 150,
             'height' => 150
